@@ -1,3 +1,3 @@
 a,b=map(float, input().split())
 
-print(f":{a+b/2:.2f}")
+print(f"{int(a+b)} {(a+b)/2:.1f}")
