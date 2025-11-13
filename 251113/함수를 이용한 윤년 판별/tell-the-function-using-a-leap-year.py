@@ -9,4 +9,4 @@ def chk(n):
         return "true"
     return "false"
 
-print(chk(n))
+print(chk(y))
