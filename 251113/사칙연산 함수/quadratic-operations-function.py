@@ -16,4 +16,5 @@ def check(a, o, c):
         return False
 if check(a,o,c)==False:
     print(False)
-print(f"{a} {o} {c} = {check(a,o,c)}")
+else:
+    print(f"{a} {o} {c} = {check(a,o,c)}")
