@@ -6,7 +6,7 @@ def a(n):
     cnt=1
     for _ in range(n):
         for _ in range(n):
-            if cnt==0:
+            if cnt%10==0:
                 cnt+=1
             print(cnt%10, end=" ")
             cnt+=1
