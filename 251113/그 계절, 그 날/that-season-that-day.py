@@ -2,7 +2,7 @@ Y, M, D = map(int, input().split())
 
 # Please write your code here.
 a=[1,3,5,7,8,10,12]
-b=[2,4,6,9,11]
+b=[4,6,9,11]
 
 def check_year(Y):
     if (Y%4==0 and Y%100!=0) or Y%400==0:
