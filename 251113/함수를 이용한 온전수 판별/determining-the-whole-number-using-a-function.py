@@ -8,11 +8,11 @@ def check(n):
         return False
     elif a%3==0 and a%9!=0:
         return False
-    else:
-        return True
+    return True
 
 cnt=0
 for i in range(a, b+1):
+    print(i, check(i))
     if check(i):
         cnt+=1
 print(cnt)
