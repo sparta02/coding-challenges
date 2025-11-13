@@ -11,7 +11,6 @@ def check(n):
 
 cnt=0
 for i in range(a, b+1):
-    print(i, check(i))
     if check(i):
         cnt+=1
 
