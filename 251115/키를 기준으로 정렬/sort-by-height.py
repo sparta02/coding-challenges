@@ -16,3 +16,5 @@ for _ in range(n):
 
 # Please write your code here.
 people.sort(lambda x: x.h)
+for i in range(n):
+    print(people[i].n, people[i].h, people[i].w)
