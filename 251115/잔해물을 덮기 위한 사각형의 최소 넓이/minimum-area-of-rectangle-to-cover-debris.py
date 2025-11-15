@@ -34,6 +34,8 @@ for i in range(2002):
                 max_x=i
             if max_y<j:
                 max_y=j
-
-print((max_x-min_x+1)*(max_y-min_y+1))
+if min_x==10000 or min_y=10000 or max_x=-1 or max_y=-1:
+    print(0)
+else:
+    print((max_x-min_x+1)*(max_y-min_y+1))
             
