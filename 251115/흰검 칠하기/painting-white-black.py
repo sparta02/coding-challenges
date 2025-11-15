@@ -8,7 +8,7 @@ for num, direction in commands:
 
 # Please write your code here.
 
-arr=[[0,0,-1] for i in range(1000000)]
+arr=[[0,0,-1] for i in range(200000)]
 현재=int(len(arr)/2)
 def cal(steps, way):
     global arr
