@@ -21,8 +21,7 @@ def calc(m, d):
 
 
 day=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
-print(calc(m2, d2))
-print(calc(m1, d1))
+
 idx = (calc(m2, d2)-calc(m1, d1))%7
 
 print(day[idx])
