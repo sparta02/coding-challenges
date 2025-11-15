@@ -9,5 +9,5 @@ class next_level:
 
 user1=next_level()
 print(f"user {user1.id} lv {user1.level}")
-user2=next_level("user2_id", user2_level)
+user2=next_level(user2_id, user2_level)
 print(f"user {user2.id} lv {user2.level}")
