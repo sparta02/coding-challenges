@@ -11,3 +11,5 @@ for stu in student:
     if arr[stu]>=K:
         print(stu)
         break
+else:
+    print(-1)
