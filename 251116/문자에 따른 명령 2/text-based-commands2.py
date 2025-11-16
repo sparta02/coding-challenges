@@ -8,9 +8,9 @@ y=0
 
 for i in dirs:
     if i=="L":
-        way=(way+1)%4
-    elif i=="R":
         way=(way+3)%4
+    elif i=="R":
+        way=(way+1)%4
     elif i=="F":
         x=x+dx[way]
         y=y+dy[way]
