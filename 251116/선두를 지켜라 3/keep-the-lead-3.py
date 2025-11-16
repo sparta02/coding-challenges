@@ -46,4 +46,5 @@ for i in range(len(a)):
     if point!=999 and temp!=point:
         cnt+=1
 
-print(cnt-1)
+
+print(cnt)
