@@ -63,7 +63,6 @@ for i in range(len(a)):
         continue
     if (a[i-1]!= b[i-1] and a[i]== b[i]):
         cnt+=1
-    print(a[i], b[i], cnt)
 
 print(cnt)
 
