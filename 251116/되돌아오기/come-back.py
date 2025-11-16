@@ -18,6 +18,7 @@ ways={
 result=-1
 아=0
 cnt=0
+
 for i in range(N):
     for j in range(dist[i]):
         x+=dxs[ways.get(dir[i])]
@@ -28,6 +29,8 @@ for i in range(N):
             print(cnt)
             아=1
             break
+    if 아==1:
+        break
 if 아==0:
     print(-1)
     
