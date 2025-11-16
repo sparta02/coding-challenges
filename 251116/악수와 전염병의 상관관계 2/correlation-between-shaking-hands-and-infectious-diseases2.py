@@ -29,7 +29,7 @@ def 감염(i, j):
 
 for hand in handshakes:
     감염(hand[1], hand[2])
-        print(people)
+
 
 for i in range(1, N+1):
     print(people[i][0], end="")
