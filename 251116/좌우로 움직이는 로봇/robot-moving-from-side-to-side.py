@@ -46,11 +46,24 @@ for i in range(m):
 
 cnt=0
 
-for i in range(max(len(a),len(b))):
+
+if len(b)>len(a):
+    for i in range(len(b)-len(a)):
+        a.append(a[len(a)-1])
+
+elif len(a)>len(b):
+    for i in range(len(a)-len(b)):
+        b.append(b[len(b)-1])
+
+
+
+for i in range(len(a)):
+    
     if i==0:
         continue
     if (a[i-1]!= b[i-1] and a[i]== b[i]):
         cnt+=1
+    print(a[i], b[i], cnt)
 
 print(cnt)
 
