@@ -11,7 +11,7 @@ for i in range(len(arr)):
         if result<temp:
             result=temp
     else:
-        temp=1
+        temp=0
     
 
 print(result)
