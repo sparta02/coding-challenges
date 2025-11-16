@@ -28,4 +28,4 @@ for i in range(t):
         pow[1]+=dxy[way]
     #print(pow)
 
-prin(pow[0]+1, pow[1]+1)
+print(pow[0]+1, pow[1]+1)
