@@ -22,16 +22,14 @@ def 감염(i, j):
     
     if temp_a==1:
         people[j][0]=1
-        people[j][1]=0
         people[i][1]+=1
     if temp_b==1:
         people[i][0]=1
-        people[i][1]=0
         people[j][1]+=1
 
 for hand in handshakes:
     감염(hand[1], hand[2])
-
+        print(people)
 
 for i in range(1, N+1):
     print(people[i][0], end="")
