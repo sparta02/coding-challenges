@@ -51,6 +51,7 @@ def right_up():
 def test(n, k):
     global x
     global y
+    global way
     if k<=n:
         x=0
         y=k-1
@@ -67,7 +68,7 @@ def test(n, k):
         x=(n-k%n)%n
         y=0
         way=3
-
+#print(n,k)
 test(n, k)
 
 def check(x, y):
@@ -77,7 +78,7 @@ def check(x, y):
 
 cnt=1
 while True:
-    #print(x, y, grid[x][y], way, cnt)
+    #print(f"x: {x}, y: {y}, grid[x][y]: {grid[x][y]}, way:{way}, cnt:{cnt}")
     if grid[x][y]=='/':
         right_up()
     else:
@@ -87,4 +88,3 @@ while True:
         print(cnt)
         break
     cnt+=1
-    #print(x, y, way, cnt)
