@@ -16,4 +16,4 @@ for i in range(n):
     #print(temp)
     if min>temp:
         min=temp
-print(temp)
+print(min)
