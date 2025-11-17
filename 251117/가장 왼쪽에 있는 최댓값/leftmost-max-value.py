@@ -10,7 +10,7 @@ while True:
     for i in range(len(arr)):
         if arr[max_index]<arr[i]:
             max_index=i
-    print(max_index+1)
+    print(max_index+1, end=" ")
     if max_index==0:
         break
     arr=arr[:max_index]
