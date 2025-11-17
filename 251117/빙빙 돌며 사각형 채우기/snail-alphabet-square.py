@@ -1,5 +1,4 @@
 n, m = map(int, input().split())
-
 # Please write your code here.
 
 arr=[[0]*m for _ in range(n)]
@@ -28,7 +27,12 @@ for i in range(2, n*m+1):
         way=(way+1)%4
     x+=dx[way]
     y+=dy[way]
-    arr[x][y]=chr((i)%26+64)
+    arr[x][y]=chr((i-1)%26+65)
+    #print(arr[x][y])
+    #1->65+0
+    #2->65+1
+    #26->65+25
+    #27->65+0
 
 pr()
 
