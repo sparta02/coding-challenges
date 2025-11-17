@@ -4,6 +4,7 @@ a = input()
 b=a.replace("0","1",1)
 if a==b:
     b=int(a)-1
+    b=str(b)
 sum=0
 for i in range(len(b)):
     sum= sum*2 +int(b[i])
