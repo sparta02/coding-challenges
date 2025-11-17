@@ -28,7 +28,7 @@ for i in range(2, n*m+1):
         way=(way+1)%4
     x+=dx[way]
     y+=dy[way]
-    arr[x][y]=chr((64+i)%65+65)
+    arr[x][y]=chr((i)%26+64)
 
 pr()
 
