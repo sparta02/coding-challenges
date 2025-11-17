@@ -1,6 +1,6 @@
 n = int(input())
 arr = [int(input()) for _ in range(n)]
-brr=[0,1,2,3,4]
+brr=[i for i in range(n)]
 # arr=[4,7,8,6,4]
 
 
