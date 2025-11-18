@@ -1,6 +1,6 @@
 N = int(input())
 arr = [list(map(int, input().split())) for _ in range(N)]
-
+arr=[[0]* for _ in range(3)]
 # Please write your code here.
 
 max1=-1
