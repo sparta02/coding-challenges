@@ -15,7 +15,7 @@ if max1!=0:
     arr[standard_i][standard_j+1]=-9
     arr[standard_i][standard_j+2]=-9
 
-max2=-1
+max2=0
 #print(arr)
 for i in range(N):
     for j in range(N-2):
