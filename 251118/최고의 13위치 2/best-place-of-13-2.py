@@ -1,25 +1,20 @@
 N = int(input())
 arr = [list(map(int, input().split())) for _ in range(N)]
 # Please write your code here.
-max1=0
-standard_i=0
-standard_j=0
-for i in range(N):
-    for j in range(N-2):
-        if arr[i][j]+arr[i][j+1]+arr[i][j+2]>max1:
-            max1=arr[i][j]+arr[i][j+1]+arr[i][j+2]
-            standard_i=i
-            standard_j=j
-if max1!=0:
-    arr[standard_i][standard_j]=-9
-    arr[standard_i][standard_j+1]=-9
-    arr[standard_i][standard_j+2]=-9
 
-max2=0
-#print(arr)
-for i in range(N):
-    for j in range(N-2):
-        if arr[i][j]+arr[i][j+1]+arr[i][j+2]>max2:
-            max2=arr[i][j]+arr[i][j+1]+arr[i][j+2]
+max_num=0
+for x1 in range(N):
+    for y1 in range(N-2):
+        for x2 in range(N):
+            for y2 in range(N-2):
+                #print(x1,y1,x2,y2)
 
-print(max1+max2)
+                if abs(y1-y2)<=2 and x1==x2:
+                    continue
+                if arr[x1][y1]+arr[x1][y1+1]+arr[x1][y1+2]+arr[x2][y2]+arr[x2][y2+1]+arr[x2][y2+2]>max_num:
+                    max_num=arr[x1][y1]+arr[x1][y1+1]+arr[x1][y1+2]+arr[x2][y2]+arr[x2][y2+1]+arr[x2][y2+2]
+                #print(max_num)
+
+print(max_num)
+
+    
