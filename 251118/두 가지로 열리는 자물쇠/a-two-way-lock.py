@@ -10,7 +10,7 @@ def is_close(n, target, N):
     # 시계 방향 거리와 반시계 방향 거리 중 작은 값이 2 이하여야 함
     diff = abs(n - target)
     dist = min(diff, N - diff)
-    return diff <= 2 or dist>=(N-2)
+    return diff <= 2 or diff>=(N-2)
 
 cnt = 0
 
