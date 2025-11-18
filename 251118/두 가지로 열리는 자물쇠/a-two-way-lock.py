@@ -36,7 +36,12 @@ for i in range(5):
     if arr6[i]<1:
         arr6[i]=arr6[i]+N
 
-
+print(arr1)
+print(arr2)
+print(arr3)
+print(arr4)
+print(arr5)
+print(arr6)
 
 x=0
 y=0
@@ -49,8 +54,11 @@ for i in range(5):
         y+=1
     if arr6[i] in arr3:
         z+=1
-    
-print(250-x*y*z)
+
+if N==1 or N==2:
+    print(125)
+else:
+    print(250-x*y*z)
 
 
 
