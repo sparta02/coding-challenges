@@ -54,7 +54,7 @@ for x in range(4,19):
     for y in range(15):
         if check_side2(x,y) and (board[x][y]==1 or board[x][y]==2):
             result=board[x][y]
-            result_x=x-3
+            result_x=x-1
             result_y=y+3
 
 print(result)
