@@ -1,5 +1,10 @@
 board = [list(map(int, input().split())) for _ in range(19)]
-
+board[0][0]=0
+board[1][1]=1
+board[3][3]=1
+board[4][4]=0
+board[4][4]=0
+board[4][4]=0
 # Please write your code here.
 
 def check_y(x,y):
