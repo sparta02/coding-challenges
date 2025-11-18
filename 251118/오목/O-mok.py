@@ -29,4 +29,5 @@ for x in range(19):
             result_x=x+1
             result_y=y+3
 print(result)
-print(result_x, result_y)
+if result!=0:
+    print(result_x, result_y)
