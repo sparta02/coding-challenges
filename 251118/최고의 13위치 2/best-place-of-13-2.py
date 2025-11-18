@@ -3,7 +3,7 @@ arr = [list(map(int, input().split())) for _ in range(N)]
 
 # Please write your code here.
 
-max1=0
+max1=-1
 standard_i=-1
 standard_j=-1
 for i in range(N):
@@ -16,7 +16,7 @@ arr[standard_i][standard_j]=-9
 arr[standard_i][standard_j+1]=-9
 arr[standard_i][standard_j+2]=-9
 
-max2=0
+max2=-1
 #print(arr)
 for i in range(N):
     for j in range(N-2):
