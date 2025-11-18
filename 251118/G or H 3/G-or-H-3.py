@@ -7,7 +7,7 @@ for _ in range(n):
     c.append(char)
 
 # Please write your code here.
-# 1 2 3 4 5 6/ len(x)=6, k=2
+# 1 2 3 4 5 6/ max(x)=6, k=2
 result=0
 for i in range(1, max(x)-k+1):
     temp=0
@@ -20,5 +20,10 @@ for i in range(1, max(x)-k+1):
             elif c[j]=="H":
                 temp+=2
     result=max(result, temp)
-
+if max(x)<=k:
+    for j in range(len(x)):
+        if c[j]=="G":
+            result+=1
+        elif c[j]=="H":
+            result+=2
 print(result)
