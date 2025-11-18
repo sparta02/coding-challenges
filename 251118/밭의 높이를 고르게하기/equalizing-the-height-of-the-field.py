@@ -12,7 +12,7 @@ for i in range(N-H+1):
         temp+=abs(H-temp_arr[j])
     #print(temp)
     result=min(result, temp)
-if N==H:
+if N==T:
     result=0
     for i in range(N):
         result+=abs(H-arr[j])
