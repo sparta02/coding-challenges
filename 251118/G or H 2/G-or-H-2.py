@@ -25,6 +25,9 @@ for i in range(len(people)):
             temp=people[j][0]-people[i][0]
         result=max(result,temp)
 
+if len(people)==1:
+    result=0
+
 print(result)
 
 
