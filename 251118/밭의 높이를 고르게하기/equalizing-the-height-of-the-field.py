@@ -5,8 +5,8 @@ arr = list(map(int, input().split()))
 result=999999999999999999999999999999999999999
 
 for i in range(N-H+1):
-    #temp_arr=arr[i:i+T]
-    print(arr[i:i+T])
+    temp_arr=arr[i:i+T]
+    #print(arr[i:i+T])
     temp=0
     for j in range(T):
         temp+=abs(H-temp_arr[j])
