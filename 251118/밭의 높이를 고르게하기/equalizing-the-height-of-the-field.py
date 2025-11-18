@@ -4,7 +4,7 @@ arr = list(map(int, input().split()))
 # Please write your code here.
 result=999999999999999999999999999999999999999
 
-for i in range(N-H+1):
+for i in range(N-T+1):
     temp_arr=arr[i:i+T]
     #print(arr[i:i+T])
     temp=0
@@ -12,8 +12,9 @@ for i in range(N-H+1):
         temp+=abs(H-temp_arr[j])
     #print(temp)
     result=min(result, temp)
+
 if N==T:
     result=0
     for i in range(N):
-        result+=abs(H-arr[j])
+        result+=abs(H-arr[i])
 print(result)
