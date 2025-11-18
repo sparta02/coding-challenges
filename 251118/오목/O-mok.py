@@ -35,9 +35,10 @@ for x in range(19):
             result=board[x][y]
             result_x=x+1
             result_y=y+3
+
 for x in range(15):
     for y in range(15):
-        if check_y(x,y) and (board[x][y]==1 or board[x][y]==2):
+        if check_side(x,y) and (board[x][y]==1 or board[x][y]==2):
             result=board[x][y]
             result_x=x+3
             result_y=y+3
