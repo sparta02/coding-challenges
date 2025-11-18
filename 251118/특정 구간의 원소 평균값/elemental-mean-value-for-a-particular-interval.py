@@ -7,8 +7,11 @@ cnt=0
 for i in range(n):
     for j in range(i, n):
         temp=0
-        temp=int(sum(arr[i:j+1])/len(arr[i:j+1]))
-        print(temp, arr[i:j+1])
+        temp=sum(arr[i:j+1])/len(arr[i:j+1])
+        if temp%1 !=0.0:
+            continue
+        temp=int(temp)
+        #print(temp, arr[i:j+1])
         if temp in arr[i:j+1]:
             cnt+=1
 print(cnt)
