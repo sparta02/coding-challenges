@@ -18,6 +18,5 @@ for i in range(K,max(pos)+1-K):
             temp+=candy[j]
     result=max(result, temp)
 
-if c<=K:
-    result=sum(candy)
+
 print(result)
