@@ -3,13 +3,12 @@ N, B = map(int, input().split())
 P = [int(input()) for _ in range(N)]
 
 # Please write your code here.
-
+P.sort()
 result=0
-for i in range(1, N):
-    arr=list(combinations(P,i))
-    for ar in arr:
-        for j in range(len(ar)):
-            if sum(ar)-int(ar[j]/2)<B:
-                result=max(result, len(ar))
 
+for i in range(1,N+1):
+    temp=sum(P[:i])-int(P[i-1]/2)
+    if B>temp:
+        result=max(result, i)
 print(result)
+    
