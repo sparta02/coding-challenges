@@ -9,7 +9,7 @@ result=9999999999999999999
 
 for i in range(n):
     min_x=99999
-    mix_y=99999
+    min_y=99999
     max_x=0
     max_y=0
     for j in range(n):
