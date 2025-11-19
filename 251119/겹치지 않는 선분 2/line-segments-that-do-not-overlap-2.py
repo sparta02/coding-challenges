@@ -13,4 +13,4 @@ for i in range(n):
             result[i]=1
             result[j]=1
 
-print(sum(result))
+print(n-sum(result))
