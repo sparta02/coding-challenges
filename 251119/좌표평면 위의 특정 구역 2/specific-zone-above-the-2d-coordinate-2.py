@@ -19,6 +19,7 @@ for i in range(n):
         min_y=min(min_y, y[j])
         max_x=max(max_x, x[j])
         max_y=max(max_y, y[j])
+    result = min(result,(max_x-min_x)*(max_y-min_y))
 
-print((max_x-min_x)*(max_y-min_y))
+print(result)
         
