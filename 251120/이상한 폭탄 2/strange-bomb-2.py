@@ -8,7 +8,7 @@ def check_index(x):
         return True
     return False
 
-max_num=0
+max_num=-1
 for i in range(N):
     temp=num[i]
     for k in range(1,K+1):
