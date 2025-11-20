@@ -14,8 +14,8 @@ for i in range(N):
         sum+=temp_arr[k]
         if sum<=B:
             max_num=max(max_num,k+1)
-        else:
-            break
+            else:
+                break
 
 print(max_num)
 
