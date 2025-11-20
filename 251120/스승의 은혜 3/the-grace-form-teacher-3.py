@@ -10,6 +10,8 @@ for i in range(N):
     for j in range(N):
         temp_arr.append(P[j]+S[j] if i!=j else int(P[j]/2)+S[j])
         sum=0
+    temp_arr.sort()
+    #print(temp_arr)
     for k in range(N):
         sum+=temp_arr[k]
         if sum<=B:
