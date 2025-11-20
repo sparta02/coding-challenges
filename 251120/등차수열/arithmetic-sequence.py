@@ -3,7 +3,6 @@ arr = list(map(int, input().split()))
 
 # Please write your code here.
 
-print(arr)
 
 result=0
 for i in range(min(arr)+1, max(arr)):
