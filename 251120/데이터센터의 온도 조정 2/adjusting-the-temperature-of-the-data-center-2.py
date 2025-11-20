@@ -1,0 +1,20 @@
+N, C, G, H = map(int, input().split())
+ranges = [tuple(map(int, input().split())) for _ in range(N)]
+left=[i[0]for i in ranges]
+right=[i[1]for i in ranges]
+
+# Please write your code here.
+
+result=0
+for i in range(min(left)-1, max(right)+2):
+    sum=0
+    for 기계들 in ranges:
+        if i<기계들[0]:
+            sum+=C
+        elif i<기계들[1]:
+            sum+=G
+        else:
+            sum+=H
+    result=max(result, sum)
+
+print(result)
