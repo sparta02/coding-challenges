@@ -11,7 +11,7 @@ for i in range(min(left)-1, max(right)+2):
     for 기계들 in ranges:
         if i<기계들[0]:
             sum+=C
-        elif i<기계들[1]:
+        elif i<=기계들[1]:
             sum+=G
         else:
             sum+=H
