@@ -10,8 +10,8 @@ min_y= min(y)
 max_x=max(x)
 max_y=max(y)
 
-for i in range(min_x+1, max_x,2):
-    for j in range(min_y+1, max_y,2):
+for i in range(min_x-1, max_x+2,2):
+    for j in range(min_y-1, max_y+2,2):
         일사분면=0
         이사분면=0
         삼사분면=0
