@@ -2,14 +2,20 @@ N = int(input())
 seat = input()
 
 # Please write your code here.
-arr=[]
+
 result=seat.find("1")
 #print(result)
-끝에서2번째인덱스=0
-for i in range(seat.count("1")-2):
-    #print(seat.find("1", seat.find("1", i-1)+1), seat.find("1", seat.find("1", i)+1))
-    result=max(result, int((seat.find("1", seat.find("1", i)+1)-seat.find("1", seat.find("1", i-1)+1))/2))
-    끝에서2번째인덱스=seat.find("1", seat.find("1", i)+1)
-    #print(int((seat.find("1", seat.find("1", i-1)+1)-seat.find("1", seat.find("1", i)+1))/2), result)
-result=max(result, len(seat)-seat.find("1", 끝에서2번째인덱스+1)-1)
+끝=seat.count("1")
+for i in range(끝+1):
+    if i == 끝:
+        result=max(result, len(seat))
+        #print(N-1-seat.find("1"))
+    else:
+        차이=int((seat.find("1")+1)/2)
+        result=max(result,차이)
+        seat=seat[seat.find("1")+1:]
+        #print(차이, seat)
+
+    
+    
 print(result)
