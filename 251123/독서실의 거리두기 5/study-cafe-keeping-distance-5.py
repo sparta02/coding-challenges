@@ -1,22 +1,19 @@
 N = int(input())
 seat = input()
 
-# Please write your code here.
-arr=[]
-for i in range(N):
-    if seat[i]=="1":
-        arr.append(i)
+arr = [i for i in range(N) if seat[i] == "1"]
 
-#print(arr)
+result = 0
 
-result=0
-for k in range(len(arr)):
-    if k==0:
-        result=max(result, arr[k])
-    elif k==(len(arr)-1):
-        result=max(result, len(seat)-arr[k]-1)
-    else:
-        result=max(result, int((arr[k]-arr[k-1])/2))
-result=max(result, len(seat)-arr[len(arr)-1]-1)
+# 첫 번째 사람과 왼쪽 끝 거리
+result = max(result, arr[0])
+
+# 마지막 사람과 오른쪽 끝 거리
+result = max(result, N - 1 - arr[-1])
+
+# 가운데 사람들 사이 거리의 절반
+for i in range(1, len(arr)):
+    dist = (arr[i] - arr[i-1]) // 2
+    result = max(result, dist)
 
 print(result)
