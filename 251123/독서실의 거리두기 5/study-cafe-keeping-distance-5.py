@@ -17,5 +17,6 @@ for k in range(len(arr)):
         result=max(result, len(seat)-arr[k]-1)
     else:
         result=max(result, int((arr[k]-arr[k-1])/2))
+result=max(result, len(seat)-arr[len(arr)-1]-1)
 
 print(result)
