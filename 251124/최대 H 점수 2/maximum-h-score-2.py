@@ -1,25 +1,32 @@
+from itertools import combinations
+
 N, L = map(int, input().split())
 arr = list(map(int, input().split()))
 
-arr.sort(reverse=True)
+def h_index(a):
+    a.sort(reverse=True)
+    h = 0
+    for i in range(len(a)):
+        if a[i] >= i + 1:
+            h = i + 1
+        else:
+            break
+    return h
 
-def can_make(H):
-    # H개가 H 이상이 되도록 만들 수 있는지 확인
-    need = 0
-    for i in range(min(H, N)):
-        if arr[i] < H:
-            need += H - arr[i]
-    return need <= L
+# L이 0이면 바로 H-index 계산
+if L == 0:
+    print(h_index(arr[:]))
+    exit()
 
-# 이분 탐색으로 최대 H 찾기
-left, right = 0, N
-answer = 0
-while left <= right:
-    mid = (left + right) // 2
-    if can_make(mid):
-        answer = mid
-        left = mid + 1
-    else:
-        right = mid - 1
+result = 0
 
-print(answer)
+# 0개부터 L개까지 선택해서 모두 탐색
+for k in range(0, L + 1):
+    for comb in combinations(range(N), k):
+        temp = arr[:]
+        for idx in comb:
+            temp[idx] += 1
+        
+        result = max(result, h_index(temp))
+
+print(result)
