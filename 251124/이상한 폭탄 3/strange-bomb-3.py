@@ -22,10 +22,10 @@ count=0
 
 for i in result_arr:
     temp_count=result_arr.count(i)
-    if count<temp_count and temp_count>1:
+    if count<temp_count:
         value=i
         count=temp_count
-    if count==temp_count and value<i and temp_count>1:
+    if count==temp_count and value<i:
         value=i
         count=temp_count
 
