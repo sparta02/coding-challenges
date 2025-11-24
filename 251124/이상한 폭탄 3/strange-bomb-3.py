@@ -11,7 +11,7 @@ def check_index(n):
 result_arr=[]
 
 for i in range(N):
-    for j in range(N-K, N+K+1):
+    for j in range(i-K, i+K+1):
         if check_index(j) and num[i]==num[j]:
             result_arr.append(num[i])
             #print(num[i])
