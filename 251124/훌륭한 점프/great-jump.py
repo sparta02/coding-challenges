@@ -12,6 +12,7 @@ def check_stone(check_num):
         return False
     for i in range(len(temp_arr)-1):
         dist = temp_arr[i+1] - temp_arr[i]
+        #print(temp_arr[i+1], temp_arr[i], dist)
         if dist>k:
             return False
     return True
@@ -20,7 +21,7 @@ def check_stone(check_num):
 
 result=999
 
-for i in range(n, min(arr[0], arr[-1])-1,-1):
+for i in range(n, 0,-1):
     if check_stone(i):
         result=min(result, i)
 
