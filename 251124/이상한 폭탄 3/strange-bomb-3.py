@@ -21,7 +21,7 @@ value=0
 count=0
 
 for i in result_arr:
-    temp_count=result_arr.count(i)
+    temp_count=num.count(i)
     if count<temp_count:
         value=i
         count=temp_count
