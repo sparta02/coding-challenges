@@ -7,7 +7,7 @@ result=0
 for x in range(n):
     for y in range(n):
         
-        for k in range(n):
+        for k in range(2*n):
             gold=0
             
             #print(f"x:{x}, y:{y}, k:{k}")
