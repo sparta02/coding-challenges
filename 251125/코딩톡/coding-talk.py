@@ -12,5 +12,6 @@ for i in range(p, m):
         arr.remove(c[i])
     #print(c[i], u[i])
 
-for i in range(len(arr)):
-    print(arr[i], end=" ")
+if u[p-1]!=0:
+    for i in range(len(arr)):
+        print(arr[i], end=" ")
