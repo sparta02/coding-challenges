@@ -25,12 +25,12 @@ seats[(최대_left+최대_right)//2]=1
 
 left=0
 
-standard=0
 최소값=9999999999
 for i in range(1, N):
     if seats[i]==1:
         #print(i, left)
         차이=i-left
         최소값=min(최소값, 차이)
+        left=i
        
 print(최소값)
