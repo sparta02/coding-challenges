@@ -25,12 +25,12 @@ def print_arr():
         print()
 
 def check_push(current, new):
-    print(f"current={current}, new={new}")
+    # print(f"current={current}, new={new}")
     for i in range(m):
-        print(winds[current][i], winds[new][i])
-        if winds[current][i] != winds[new][i]:
-            return False
-    return True
+        # print(winds[current][i], winds[new][i])
+        if winds[current][i] == winds[new][i]:
+            return True
+    return False
 
 for inst in a:
     up_way=0
@@ -38,9 +38,9 @@ for inst in a:
 
     down_way=0
     down_current=inst[0]-1
-    print(up_current)
-    print_arr()
-    print()
+    # print(up_current)
+    # print_arr()
+    # print()
 
     if inst[1] =="R":
         push_left(up_current)
@@ -51,8 +51,8 @@ for inst in a:
         up_way=0
         down_way=0
 
-    print_arr()
-    print()
+    # print_arr()
+    # print()
     
     while(1):
         up_current-=1
@@ -75,5 +75,8 @@ for inst in a:
         else:
             push_right(down_current)
             down_way=0
-    print_arr()
-    print()
+    # print_arr()
+    # print()
+
+
+print_arr()
