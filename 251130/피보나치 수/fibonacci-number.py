@@ -12,8 +12,10 @@ def fib(num):
 
     if num==1 or num==2:
         temp_list[num]=1
+        return 1
     else:
         temp_list[num]=fib(num-1)+fib(num-2)
+        return temp_list[num]
 
 fib(N)
 print(temp_list[N])
