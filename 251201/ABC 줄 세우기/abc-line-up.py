@@ -5,7 +5,7 @@ arr=list(input().split())
 result=0
 
 for i in range(n):
-    result+=abs(ord(arr[i]) - (i+1))
+    result+=abs(ord(arr[i]) - (i+65))
 
 print(int(result/2))
 
