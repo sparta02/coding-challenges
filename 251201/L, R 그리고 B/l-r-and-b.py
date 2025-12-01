@@ -21,12 +21,12 @@ for i in range(10):
             B_x=i
             B_y=j
 
-print(L_x, L_y)
-print(R_x, R_y)
-print(B_x, B_y)
+# print(L_x, L_y)
+# print(R_x, R_y)
+# print(B_x, B_y)
 
-dist = abs(L_x-B_x) + abs(L_y-B_y)
-if (L_x==R_x and R_x==B_x) or (L_y==R_y and R_y==B_y):
+dist = abs(L_x-B_x) + abs(L_y-B_y)-1
+if (L_x==R_x and R_x==B_x and L_y<R_y<B_y) or (L_y==R_y and R_y==B_y and L_x<R_x<B_x):
     dist+=2
 
 print(dist)
