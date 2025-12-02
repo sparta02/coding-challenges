@@ -28,13 +28,13 @@ count=0
 for i in range(0, int(n/2)+1):
     num_two=i # 숫자 2의 개수
     temp_num= n-i*2
-    print(f"temp_num:{temp_num}")
+    
 
     if temp_num%3 !=0: # 만약 나머지 숫자가 3으로 나눠지지 않는다면 
         continue # 스킵
     num_three = int(temp_num/3) # 숫자 3의 개수
-    
-    print(num_two, num_three)
+    # print(f"temp_num:{temp_num}")
+    # print(num_two, num_three)
 
     count+=calc(num_two, num_three)
 
