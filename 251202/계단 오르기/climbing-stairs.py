@@ -36,4 +36,4 @@ for i in range(0, int(n/2)+1):
 
     count+=calc(num_two, num_three)
 
-print(count)
+print(count%10007)
