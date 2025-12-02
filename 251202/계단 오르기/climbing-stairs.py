@@ -1,41 +1,51 @@
+MOD = 10007
+
 n = int(input())
 
-# 10개의 계단
-# 2: 1번, 3: X
-# 2: 2번, 3: 2번  4C2
-# 2: 3번, 3: X
-# 2: 4번, 3: X
-# 2: 5번, 3: X
+# 1. factorial과 inverse factorial 미리 계산 (MOD 10007)
+fact = [1] * (n + 1)
+inv_fact = [1] * (n + 1)
 
+# factorial 계산
+for i in range(1, n + 1):
+    fact[i] = (fact[i - 1] * i) % MOD
 
-# 1. 팩토리얼 함수
-def fact(n):
-    result=1
-    for i in range(1, n+1):
-        result*=i
+# 페르마 소정리를 사용한 역팩토리얼 계산
+# inv_fact[n] = fact[n]^(MOD-2) mod MOD
+def mod_pow(a, b):
+    result = 1
+    while b > 0:
+        if b % 2 == 1:
+            result = (result * a) % MOD
+        a = (a * a) % MOD
+        b //= 2
     return result
 
+inv_fact[n] = mod_pow(fact[n], MOD - 2)
 
-# 2. 2가 a번, 3이 b번 나올 때 나올 수 있는 경우의 수를 반환하는 calc
+# 아래로 내려가며 inv_fact 계산
+for i in range(n, 0, -1):
+    inv_fact[i - 1] = (inv_fact[i] * i) % MOD
 
-def calc(a, b):
-    return int(fact(a+b)/(fact(a)*fact(b)))
 
-# 3. 가능한 2, 3의 개수 조합을 찾아 calc를 호출하는 main 코드
+# 2. 조합 함수 (nCk)
+def comb(a, b):
+    if b < 0 or b > a:
+        return 0
+    return (fact[a] * inv_fact[b] % MOD) * inv_fact[a - b] % MOD
 
-count=0
 
-for i in range(0, int(n/2)+1):
-    num_two=i # 숫자 2의 개수
-    temp_num= n-i*2
-    
+# 3. 가능한 모든 (2의 개수, 3의 개수) 조합에 대해 합산
+answer = 0
 
-    if temp_num%3 !=0: # 만약 나머지 숫자가 3으로 나눠지지 않는다면 
-        continue # 스킵
-    num_three = int(temp_num/3) # 숫자 3의 개수
-    # print(f"temp_num:{temp_num}")
-    # print(num_two, num_three)
+for a in range(n // 2 + 1):   # a = 2의 개수
+    remain = n - 2 * a
+    if remain % 3 != 0:
+        continue
 
-    count+=calc(num_two, num_three)
+    b = remain // 3           # b = 3의 개수
 
-print(count%10007)
+    # (a + b)! / (a! b!) = 조합(a+b, a)
+    answer = (answer + comb(a + b, a)) % MOD
+
+print(answer)
