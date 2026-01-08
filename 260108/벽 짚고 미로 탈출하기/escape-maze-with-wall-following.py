@@ -22,12 +22,11 @@ dy_look=[1, 0, -1, 0]
 dx_right=[1, 0, -1, 0]
 dy_right=[0, -1, 0, 1]
 
-print(f"x:{x}, y:{y}, i:{i}")
+# print(f"x:{x}, y:{y}, i:{i}")
 result=0
 
-temp=1
 while(1):
-    temp-=1
+
     # Step 1: 바라보고 있는 방향이 벽으로 막혀 있는 경우
     if 0<=(x+dx_look[i])<N and 0<=(y+dy_look[i])<N:
         if grid[x+dx_look[i]][y+dy_look[i]]=="#":
@@ -41,7 +40,7 @@ while(1):
     x+=dx_look[i]
     y+=dy_look[i]
     result+=1
-    print(f"x:{x}, y:{y}, i:{i}")
+    # print(f"x:{x}, y:{y}, i:{i}")
 
     # 이동한 곳이 격자 밖이면 종료
     if x<0 or x>=N or y<0 or y>=N:
