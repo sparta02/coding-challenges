@@ -23,8 +23,8 @@ for time in range(1, m+1):
             dy=[1,0,-1,0]
 
             for i in range(4):
-                if 0<=x+dx[i]*time<n and 0<=y+dy[i]*time<n and grid[x+dx[i]*time][y+dy[i]*time] !=1:
-                    grid[x+dx[i]*time][y+dy[i]*time]=2
+                if 0<=x+dx[i]*(2**(time-1))<n and 0<=y+dy[i]*(2**(time-1))<n and grid[x+dx[i]*(2**(time-1))][y+dy[i]*(2**(time-1))] !=1:
+                    grid[x+dx[i]*(2**(time-1))][y+dy[i]*(2**(time-1))]=2
     # print_grid()
     for i in range(n):
         for j in range(n):
