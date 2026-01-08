@@ -63,7 +63,7 @@ def count_twin(new_grid):
         for y in range(n):
             if new_grid[x][y] == new_grid[x+1][y] and new_grid[x][y]!=0:
                 temp+=1
-    print(f"temp:{temp}")
+    # print(f"temp:{temp}")
     return temp
     
 
