@@ -24,6 +24,8 @@ def move(x, y):
     for i in range(4):
         temp_x=x+dx[i]
         temp_y=y+dy[i]
+        if temp_x<=0 or temp_x>n or temp_y<=0 or temp_y>n:
+            continue
         if b[temp_x][temp_y]==0 and a[temp_x][temp_y] > a[x][y]:
             result_x=temp_x
             result_y=temp_y
@@ -44,3 +46,4 @@ while(1):
     # print_grid(b)
     if (new_x == -1 or new_y ==-1):
         break
+
