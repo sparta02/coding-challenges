@@ -25,6 +25,7 @@ dy_right=[0, -1, 0, 1]
 # print(f"x:{x}, y:{y}, i:{i}")
 result=0
 
+사면초가=0
 while(1):
 
     # Step 1: 바라보고 있는 방향이 벽으로 막혀 있는 경우
@@ -33,6 +34,10 @@ while(1):
             i=(i-1)%4
             # print("막혀있음")
             # print(f"x:{x}, y:{y}, i:{i}")
+            사면초가+=1
+            if 사면초가==4:
+                print(-1)
+                break
             continue
     
     # Step 2: 이동이 가능한 경우
@@ -40,6 +45,7 @@ while(1):
     x+=dx_look[i]
     y+=dy_look[i]
     result+=1
+    사면초가=0
     # print(f"x:{x}, y:{y}, i:{i}")
 
     # 이동한 곳이 격자 밖이면 종료
@@ -61,6 +67,7 @@ while(1):
             result+=1
             # print("오른쪽에 벽이 없음")
             # print(f"x:{x}, y:{y}, i:{i}")
+            사면초가=0
 
     # 이동한 곳이 격자 밖이면 종료
     if x<0 or x>=N or y<0 or y>=N:
