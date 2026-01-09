@@ -1,99 +1,47 @@
+import sys
+# 입력 속도 최적화 (N이 작아서 필수는 아니지만 습관적으로 사용)
+input = sys.stdin.readline
+
 n = int(input())
 grid = [list(map(int, input().split())) for _ in range(n)]
 
-# 기본 방향 설정
-# 우, 하, 좌, 상
-dx=[0, 1, 0, -1]
-dy=[1, 0, -1, 0]
+# 우(0), 하(1), 좌(2), 상(3)
+dx = [0, 1, 0, -1]
+dy = [1, 0, -1, 0]
 
-# 현재 좌표, 방향
-x=-1
-y=-1
-way=-1
-
-def meet_1():
-    global way
-    if way==0:
-        way+=3
-    elif way==1:
-        way+=1
-    elif way==2:
-        way-=1
-    elif way==3:
-        way-=3
-
-def meet_2():
-    global way
-    if way==0:
-        way+=1
-    elif way==1:
-        way-=1
-    elif way==2:
-        way+=1
-    elif way==3:
-        way-=1
-
-
-def start():
-    global x
-    global y
-    count=1
-    while(1):
-        x+=dx[way]
-        y+=dy[way]
-        count+=1
-
-        if not (0<=x<n and 0<=y<n):
-            break
-
-        if grid[x][y]==1:
-            meet_1()
-        elif grid[x][y]==2:
-            meet_2()
+def simulate(sx, sy, sd):
+    x, y, way = sx, sy, sd
+    count = 1
+    # 안전장치: n*n*4번 이상 움직였다면 무한 루프임
+    limit = n * n * 4
+    move_tick = 0
+    
+    while 0 <= x < n and 0 <= y < n:
+        move_tick += 1
+        if move_tick > limit: return count # 무한 루프 강제 종료
+        
+        if grid[x][y] == 1: # / 거울
+            # 0<->3, 1<->2
+            way = 3 - way
+        elif grid[x][y] == 2: # \ 거울
+            # 0<->1, 2<->3
+            way = way ^ 1 # 비트 연산 혹은 조건문으로 명확히
+            
+        x += dx[way]
+        y += dy[way]
+        count += 1
     return count
 
-result=0
-400*100*100
+result = 0
 
-#위에서
 for i in range(n):
-    x=0
-    y=i
-    way=1
-    #print(f"x:{x}, y:{y}, way:{way}")
-    count=start()
-    #print(f"count:{count}")
-    result= max(result, count)
-
-#오른쪽에서
-for i in range(n):
-    x=i
-    y=n-1
-    way=2
-    #print(f"x:{x}, y:{y}, way:{way}")
-    count=start()
-    #print(f"count:{count}")
-    result= max(result, count)
-
-#아래에서
-for i in range(n):
-    
-    x=n-1
-    y=i
-    way=3
-    #print(f"x:{x}, y:{y}, way:{way}")
-    count=start()
-    #print(f"count:{count}")
-    result= max(result, count)
-
-#왼쪽에서
-for i in range(n):
-    x=i
-    y=0
-    way=0
-    #print(f"x:{x}, y:{y}, way:{way}")
-    count=start()
-    #print(f"count:{count}")
-    result= max(result, count)
+    # 위에서 아래로 (x=0, y=i, 하향)
+    result = max(result, simulate(0, i, 1))
+    # 아래에서 위로 (x=n-1, y=i, 상향)
+    result = max(result, simulate(n-1, i, 3))
+    # 왼쪽에서 오른쪽으로 (x=i, y=0, 우향)
+    result = max(result, simulate(i, 0, 0))
+    # 오른쪽에서 왼쪽으로 (x=i, y=n-1, 좌향)
+    result = max(result, simulate(i, n-1, 2))
 
 print(result)
