@@ -34,7 +34,7 @@ for _ in range(T):
         balls.append([x,y,d])
     # print(balls)
 
-    for time in range(5):
+    for time in range(1000):
         # print(f"{time+1}번째 시도")
         count_list=[[0]*n for _ in range(n)]
         for i in range(len(balls)):
