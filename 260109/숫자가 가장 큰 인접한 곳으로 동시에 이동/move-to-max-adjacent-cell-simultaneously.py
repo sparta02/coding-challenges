@@ -27,18 +27,30 @@ def print_grid(grid):
 
 for time in range(t):
     # 우, 좌, 하, 상 순서로
-    dx=[0, 0, 1, -1]
-    dy=[1, -1, 0, 0]
+    # dx=[0, 0, 1, -1]
+    # dy=[1, -1, 0, 0]
+
+    dx=[-1, 1, 0, 0]
+    dy=[0, 0, -1, 1]
 
     new_count_list= [[0]*n for _ in range(n)]
 
+    # (x,y)에 대해 확인
     for x in range(n):
         for y in range(n):
+
+            # 만약 구슬이 있다면
             if count_list[x][y]==1:
+
+                # 최종 방향, 값
                 temp_way=0
                 temp_value=-1
                 #print(f"x:{x}, y:{y}")
+
+                # 4방향에 대해 확인
                 for way in range(4):
+
+                    # 적절한 index 안에 있다면
                     if 0<=(x+dx[way])<n and 0<=(y+dy[way])<n:
                         #print(f"{x+dx[way]}, {y+dy[way]} 체크")
                         if temp_value < a[x+dx[way]][y+dy[way]]:
