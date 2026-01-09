@@ -53,7 +53,7 @@ def start():
     return count
 
 result=0
-
+400*100*100
 
 #위에서
 for i in range(n):
@@ -90,7 +90,7 @@ for i in range(n):
 for i in range(n):
     x=i
     y=0
-    way=2
+    way=0
     #print(f"x:{x}, y:{y}, way:{way}")
     count=start()
     #print(f"count:{count}")
