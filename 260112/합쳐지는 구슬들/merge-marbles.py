@@ -47,13 +47,15 @@ def main():
         #print(grid)
         new_balls=[]
 
+        # 모든 격자에 대해
         for i in range(n):
             for j in range(n):
+                # [i][j]를 조사
                 if len(grid[i][j])==1:
                     new_balls.append([i,j,grid[i][j][0][0],grid[i][j][0][1],grid[i][j][0][2]])
                 elif len(grid[i][j])>1:
                     temp_list=grid[i][j]
-                    temp_list=sorted(temp_list, key=lambda x: -x[1])
+                    temp_list=sorted(temp_list, key=lambda x: -x[2])
 
                     temp_sum=0
                     for k in range(len(temp_list)):
