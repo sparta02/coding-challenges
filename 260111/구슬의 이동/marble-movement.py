@@ -33,7 +33,7 @@ def print_grid(grid):
 
 
 # 각 시간에 대해
-for time in range(2):
+for time in range(t):
     #print(balls)
     # 각 공에 대해 이동
     next_grid=[[0]*n for _ in range(n)]
@@ -63,7 +63,7 @@ for time in range(2):
         if k<len(grid[i]):
             temp_list=grid[i]
 
-            temp_list=sorted(temp_list, key=lambda x:(-x[3], x[4]))
+            temp_list=sorted(temp_list, key=lambda x:(-x[3], -x[4]))
             # print(temp_list)
             for j in range(k):
                 new_balls.append(temp_list[j])
