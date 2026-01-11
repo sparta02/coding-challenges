@@ -44,16 +44,16 @@ for time in range(2):
                 balls[i][2]=(balls[i][2]+2)%4
             balls[i][0]+=dx[balls[i][2]]
             balls[i][1]+=dy[balls[i][2]]
-            # print(x, y)
+            
         next_grid[balls[i][0]][balls[i][1]]+=1
     #print_grid(next_grid)
     
-        
+    #print(balls)    
     # 재정렬
     grid= [[] for _ in range(n*n)]
-    for x, y, way, dist, num in balls:
-        grid[x*n+y].append(balls[num])
-    #print(grid)
+    for i in range(len(balls)):
+        grid[balls[i][0]*n+balls[i][1]].append(balls[i])
+    # print(grid)
     
     new_balls=[]
     for i in range(n*n):
@@ -64,10 +64,10 @@ for time in range(2):
             temp_list=grid[i]
 
             temp_list=sorted(temp_list, key=lambda x:(-x[3], x[4]))
-            #print(temp_list)
+            # print(temp_list)
             for j in range(k):
                 new_balls.append(temp_list[j])
     
     balls=new_balls[:]
-    #print(balls)
-print(len(balls))
+#     print(balls)
+# print(len(balls))
