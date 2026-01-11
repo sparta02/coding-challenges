@@ -70,4 +70,4 @@ for time in range(2):
     
     balls=new_balls[:]
 #     print(balls)
-# print(len(balls))
+print(len(balls))
