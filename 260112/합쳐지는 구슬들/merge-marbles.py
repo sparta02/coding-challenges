@@ -3,7 +3,7 @@ import sys
 n, m, t = map(int, input().split())
 
 balls=[]
-for _ in range(m):
+for i in range(m):
     ri, ci, di, wi = input().split()
     temp_list=[]
     temp_list.append(int(ri)-1)
@@ -17,6 +17,7 @@ for _ in range(m):
     elif di=="L":
         temp_list.append(3)
     temp_list.append(int(wi))
+    temp_list.append(i)
     balls.append(temp_list)
 
 # Please write your code here.
@@ -42,14 +43,14 @@ def main():
         
         for i in range(len(balls)):
             balls[i][0], balls[i][1], balls[i][2] = move(balls[i][0], balls[i][1], balls[i][2])
-            grid[balls[i][0]][balls[i][1]].append([balls[i][2], balls[i][3]])
+            grid[balls[i][0]][balls[i][1]].append([balls[i][2], balls[i][3], balls[i][4]])
         #print(grid)
         new_balls=[]
 
         for i in range(n):
             for j in range(n):
                 if len(grid[i][j])==1:
-                    new_balls.append([i,j,grid[i][j][0][0],grid[i][j][0][1]])
+                    new_balls.append([i,j,grid[i][j][0][0],grid[i][j][0][1],grid[i][j][0][2]])
                 elif len(grid[i][j])>1:
                     temp_list=grid[i][j]
                     temp_list=sorted(temp_list, key=lambda x: -x[1])
@@ -58,7 +59,7 @@ def main():
                     for k in range(len(temp_list)):
                         temp_sum+=temp_list[k][1]
                     temp_list[0][1]=temp_sum
-                    new_balls.append([i,j,temp_list[0][0],temp_list[0][1]])
+                    new_balls.append([i,j,temp_list[0][0],temp_list[0][1],temp_list[0][2]])
                     #print(temp_sum)
         #print(new_balls)
         balls=new_balls
@@ -67,3 +68,4 @@ def main():
 
 if __name__=="__main__":
     main()
+
