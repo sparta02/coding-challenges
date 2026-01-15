@@ -21,7 +21,7 @@ def make(num):
 
 make(0)
 print_result=list(set(print_result))
-print_result.sort()
+#print_result.sort()
 #print(print_result)
 for hi in print_result:
     for j in range(m):
