@@ -19,6 +19,9 @@ def move(curr_num):
     if curr_num == n-1:
         temp_list.append([temp_list[-1][1], 0])
         #print(temp_list)
+        if cost[temp_list[-2][1]][0]==0:
+            temp_list.pop()
+            return
         print_cost()
         temp_list.pop()
         return
