@@ -26,11 +26,13 @@ def move(curr_num):
     for i in range(n):
         # print(visited)
         # print(temp_list)
-        if visited[i] == True or curr_num == i:
+        if visited[i] == True or (False if len(temp_list)==0 else i == temp_list[-1][1]):
+            continue
+        if (False if len(temp_list)==0 else cost[temp_list[-1][1]][i]==0):
             continue
         
         visited[i]=True
-        temp_list.append([curr_num, i])
+        temp_list.append([0 if len(temp_list)==0 else temp_list[-1][1], i])
 
         move(curr_num+1)
 
