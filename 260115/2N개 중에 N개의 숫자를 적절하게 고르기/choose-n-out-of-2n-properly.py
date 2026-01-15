@@ -8,10 +8,12 @@ temp_list=[]
 def choose(i):
     global result
     if i==2*n:
-        #print(temp_list)
-        group_a=sum(temp_list)
-        group_b=sum(num)-sum(temp_list)
-        result=min(result,abs(group_a-group_b))
+        if len(temp_list)==n:
+            #print(temp_list)
+            group_a=sum(temp_list)
+            group_b=sum(num)-sum(temp_list)
+            #print(abs(group_a-group_b))
+            result=min(result,abs(group_a-group_b))
         return
 
     # 현재 num[i]을 추가하는 경우
