@@ -14,7 +14,7 @@ def make(num):
         #print()
         return
     
-    for i in range(1, n+1):
+    for i in range(1 if len(result)==0 else result[-1]+1, n+1):
         result.append(i)
         make(num+1)
         result.pop()
