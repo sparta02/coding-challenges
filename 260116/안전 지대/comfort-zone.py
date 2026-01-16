@@ -28,40 +28,49 @@ def set_visited_k(k):
 
 
 def dps(x, y):
+    stack=[(x,y)]
     visited[x][y]=True
     #print_visited()
-    for i in range(4):
-        temp_x=x+dx[i]
-        temp_y=y+dy[i]
+    
+    while stack:
+        nx, ny=stack.pop()
+        for i in range(4):
+            temp_x = nx + dx[i]
+            temp_y = ny + dy[i]
+            # 인덱스 벗어나면 skip
+            if not (0<=temp_x<n and 0<=temp_y<m):
+                continue
 
-        # 인덱스 벗어나면 skip
-        if not (0<=temp_x<n and 0<=temp_y<m):
-            continue
-
-        # 다음 칸이 True면 skip
-        if visited[temp_x][temp_y]==True:
-            continue
-        dps(temp_x, temp_y)
+            # 다음 칸이 True면 skip
+            if visited[temp_x][temp_y]==True:
+                continue
+            visited[temp_x][temp_y]=True
+            stack.append((temp_x, temp_y))
 
 
+# 4. 메인 로직 (기존 루프 구조 유지)
+# 격자 내 최대 높이 확인
+max_h = 0
+for row in grid:
+    for val in row:
+        if val > max_h:
+            max_h = val
 
-
-for hi in range(1, 100):
+for hi in range(1, max_h + 1):
     reset_visited()
-    #print_visited()
+    
     set_visited_k(hi)
-    #print_visited()
-    temp_count=0
+    
+    temp_count = 0
     for i in range(n):
         for j in range(m):
-            if visited[i][j]==False:
-                temp_count+=1
-                dps(i,j)
-    #print(temp_count, hi)
-    if result_count<temp_count:
-        result_count=temp_count
-        result_k=hi
+            if visited[i][j] == False:
+                temp_count += 1
+                dps(i, j)
+    
+    if result_count < temp_count:
+        result_count = temp_count
+        result_k = hi
 
-print(result_k, result_count)
-
-
+# 최종 결과 출력
+print(result_count, result_k)
