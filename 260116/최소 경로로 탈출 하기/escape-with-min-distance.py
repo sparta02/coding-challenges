@@ -21,7 +21,7 @@ def BFS(x, y):
             temp_x=curr_x+dx[i]
             temp_y=curr_y+dy[i]
 
-            if not (0<=temp_x<n and 0<=temp_y<n):
+            if not (0<=temp_x<n and 0<=temp_y<m):
                 continue
             
             if snake[temp_x][temp_y]==0:
