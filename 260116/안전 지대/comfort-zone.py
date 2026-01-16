@@ -46,7 +46,7 @@ def dps(x, y):
 
 
 
-for hi in range(1, 10):
+for hi in range(1, 1000):
     reset_visited()
     #print_visited()
     set_visited_k(hi)
