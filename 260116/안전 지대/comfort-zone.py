@@ -46,7 +46,7 @@ def dps(x, y):
 
 
 
-for hi in range(1, 100):
+for hi in range(1, 10):
     reset_visited()
     #print_visited()
     set_visited_k(hi)
@@ -57,11 +57,11 @@ for hi in range(1, 100):
             if visited[i][j]==False:
                 temp_count+=1
                 dps(i,j)
-    #print(hi, temp_count)
+    #print(temp_count, hi)
     if result_count<temp_count:
         result_count=temp_count
         result_k=hi
 
-print(result_count, result_k)
+print(result_k, result_count)
 
 
