@@ -73,4 +73,4 @@ for hi in range(1, max_h + 1):
         result_k = hi
 
 # 최종 결과 출력
-print(result_count, result_k)
+print( result_k,result_count)
