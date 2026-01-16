@@ -63,7 +63,8 @@ def start_BFS():
     BFS(r1, c1)
 
     # print(distance[r2][c2])
-    result=min(result, distance[r2][c2])
+    if distance[r2][c2]!=-1:
+        result=min(result, distance[r2][c2])
 
 
 
@@ -118,4 +119,5 @@ def choose_wall(num):
 
 choose_wall(0)
 
+# print(result)
 print(-1 if result==99999999999999999 else result)
