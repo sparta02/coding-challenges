@@ -20,4 +20,4 @@ for i in range(3, n+1):
 # print(dp[10])
 # print(dp[589])
 # print(dp)
-print(dp[n])
+print(dp[n]%100000007)
