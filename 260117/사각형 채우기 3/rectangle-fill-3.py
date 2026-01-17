@@ -15,7 +15,9 @@ dp[2]=7
 # Case 3. 2x1 사각형을 2개 추가한다
 # dp[i-2] + 1
 
-for i in (3, 1001):
+for i in range(3, n+1):
     dp[i]=dp[i-1]*2+dp[i-2]*4
-
+# print(dp[10])
+# print(dp[589])
+# print(dp)
 print(dp[n])
