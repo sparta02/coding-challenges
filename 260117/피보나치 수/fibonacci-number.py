@@ -15,7 +15,7 @@ def fibo(num):
     elif num==2:
         memo[num]=1
     else:
-        memo[num]=fib(num-1)+fib(num-2])
+        memo[num]=fib(num-1)+fib(num-2)
     #print(memo)
     return memo[num]
 
