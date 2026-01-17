@@ -16,6 +16,6 @@ dp[2]=7
 # dp[i-2] + 1
 
 for i in (3, n+1):
-    dp[i]=dp[i-1]*2+dp[i-2]
+    dp[i]=dp[i-1]*2+dp[i-2]*4
 
 print(dp[n])
