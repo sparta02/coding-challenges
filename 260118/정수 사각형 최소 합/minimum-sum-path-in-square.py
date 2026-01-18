@@ -14,7 +14,7 @@ for i in range(1, n):
 
 for x in range(1, n):
     for y in range(n-2, -1, -1):
-        print(x, y)
+        
         dp[x][y]=min(grid[x][y]+dp[x-1][y], grid[x][y]+dp[x][y+1])
 
 print(dp[n-1][0])
