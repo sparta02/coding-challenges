@@ -6,7 +6,7 @@ grid = [list(map(int, input().split())) for _ in range(n)]
 dp=[[0]*n for _ in range(n)]
 
 if n==1:
-    print(dp[0][0])
+    print(0)
 else:
     dp[0][0]=9
     dp[0][1] = grid[0][1]
