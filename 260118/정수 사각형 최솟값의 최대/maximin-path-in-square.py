@@ -6,11 +6,11 @@ grid = [list(map(int, input().split())) for _ in range(n)]
 dp=[[0]*n for _ in range(n)]
 
 if n==1:
-    print(0)
+    print(grid[0][0])
 else:
-    dp[0][0]=9
-    dp[0][1] = grid[0][1]
-    dp[1][0] = grid[1][0]
+    dp[0][0]=grid[0][0]
+    # dp[0][1] = grid[0][1]
+    # dp[1][0] = grid[1][0]
 
     for i in range(1, n):
         dp[0][i]=min(dp[0][i-1], grid[0][i])
