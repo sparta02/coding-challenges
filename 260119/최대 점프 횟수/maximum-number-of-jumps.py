@@ -18,4 +18,4 @@ for i in range(1, n):
     if dp[i]==0:
         끝=i
 
-print(max(dp[1:끝]))
+print(max(dp[1:끝+1]))
