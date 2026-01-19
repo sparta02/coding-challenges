@@ -5,6 +5,8 @@ grid = [list(map(int, input().split())) for _ in range(n)]
 dp=[ [1]*m for _ in range(n)]
 for i in range(1, n):
     grid[i][0]=99999
+
+for i in range(1, m):
     grid[0][i]=99999
 
 for x in range(1, n):
