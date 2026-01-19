@@ -25,3 +25,5 @@ result=0
 for i in range(n):
     for j in range(m):
         result=max(result, dp[i][j])
+
+print(result)
