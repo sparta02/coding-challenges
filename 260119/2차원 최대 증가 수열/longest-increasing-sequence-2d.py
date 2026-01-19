@@ -2,7 +2,9 @@ n, m = map(int, input().split())
 grid = [list(map(int, input().split())) for _ in range(n)]
 
 # Please write your code here.
-dp=[ [1]*m for _ in range(n)]
+dp=[ [-999]*m for _ in range(n)]
+dp[0][0]=1
+
 for i in range(1, n):
     grid[i][0]=99999
 
