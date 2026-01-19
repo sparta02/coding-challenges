@@ -8,9 +8,14 @@ dp=[0]*n
 dp[0]=0
 for i in range(1,n):
     for j in range(i):
-        print(f"i:{i} j:{j}")
+        #print(f"i:{i} j:{j}")
         if j+m[j]>=i and dp[j]+1>dp[i]:
             dp[i]=dp[j]+1
-    print(dp)
+    #print(dp)
 
-print(max(dp))
+끝=n-1
+for i in range(1, n):
+    if dp[i]==0:
+        끝=i
+
+print(max(dp[1:끝]))
