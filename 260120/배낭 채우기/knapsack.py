@@ -11,7 +11,7 @@ for 보석번호 in range(N):
 
 for 보석번호 in range(1, N):
     for i in range(M+1):
-        dp[보석번호][i]=max(dp[보석번호-1][i], dp[보석번호][i] if i>=v[보석번호] else 0,  dp[보석번호-1][i-w[보석번호]]+v[보석번호] if i>=v[보석번호] else 0)
+        dp[보석번호][i]=max(dp[보석번호-1][i], dp[보석번호][i] if i>=w[보석번호] else 0,  dp[보석번호-1][i-w[보석번호]]+v[보석번호] if i>=w[보석번호] else 0)
 
 # for i in range(N):
 #     for j in range(M+1):
