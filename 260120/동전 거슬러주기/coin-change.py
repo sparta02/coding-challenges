@@ -9,7 +9,7 @@ for i in range(1, m+1):
     for cost in coin:
         # i원을 만들고 싶을 때
         # cost 동전을 사용
-        if cost>=i
+        if cost>=i:
             if dp[i-cost]==999999:
                 continue
             dp[i]=min(dp[i-cost]+1, dp[i])
