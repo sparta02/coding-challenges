@@ -21,4 +21,7 @@ for num in A:
 
     #print(dp)
 
-print(dp[m])
+if dp[m]==999999:
+    print(-1)
+else:
+    print(dp[m])
