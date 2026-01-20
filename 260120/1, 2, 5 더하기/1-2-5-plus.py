@@ -10,7 +10,7 @@ dp[5]=9
 for i in range(6,n+1):
     dp[i]=dp[i-1]+dp[i-2]+dp[i-5]
 
-print(dp[-1])
+print(dp[-1]%10007)
 
 
 # 1, 2, 3, 5, 9
@@ -44,3 +44,4 @@ print(dp[-1])
 # 2 + 1 + 2
 
 # 5
+
