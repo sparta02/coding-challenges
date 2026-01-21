@@ -2,7 +2,7 @@ n, m = map(int, input().split())
 quests = [tuple(map(int, input().split())) for _ in range(n)]
 
 # Please write your code here.
-행길이=10000
+행길이=sum(x[1] for x in quests)+1
 dp=[ [-1]*(행길이+1) for _ in range(n)]
 
 dp[0][0]=0
