@@ -27,11 +27,13 @@ for i in range(1, n):
         if numbers[i]>=0:
             dp[i][j]=max(numbers[i], dp[i-1][j]+numbers[i])
         # numbers[i]가 홀수라면
-        # 1. 이번 숫자에 이어서 뺀다
+        # 1. 저번 숫자에 이어서 뺀다
+        # 2. 이번 숫자부터 새로 시작한다
         else:
             if j>=1:
-                dp[i][j]=max(dp[i][j], dp[i-1][j-1]+numbers[i])
+                dp[i][j]=max(numbers[i], dp[i-1][j-1]+numbers[i])
 
+# print_grid()
 
 result=-9999
 for i in range(n):
