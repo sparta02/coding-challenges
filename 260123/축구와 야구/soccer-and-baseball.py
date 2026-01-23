@@ -48,4 +48,4 @@ for i in range(1, n):
                 dp[i+1][j][k+1] =max(dp[i+1][j][k+1],dp[i][j][k]+b[i+1])
 
 # print_grid()
-print(dp[-1][-1][-1])
+print(dp[-1][11][9])
