@@ -26,6 +26,11 @@ for i in range(1, n):
         for k in range(3):
             if j==k:
                 continue
-            dp[i][j]=max(dp[i][j], dp[i-1][k]+cost[i-1][j])
+            dp[i][j]=max(dp[i][j], dp[i-1][k]+cost[i][j])
 
+# for i in range(n):
+#     for j in range(3):
+#         print(dp[i][j], end=" ")
+#     print()
+# print()
 print(max(dp[-1]))
