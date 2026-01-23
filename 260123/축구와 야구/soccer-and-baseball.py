@@ -14,7 +14,7 @@ for _ in range(n):
 # 야구팀을 k명 뽑았을 때
 # 최대 점수
 
-dp= [[[-1]*10 for _ in range(12)] for _ in range(n+1)]
+dp= [[[0]*10 for _ in range(12)] for _ in range(n+1)]
 
 dp[1][1][0]=s[1]
 dp[1][0][1]=b[1]
@@ -35,8 +35,6 @@ def print_grid():
 for i in range(1, n):
     for j in range(12):
         for k in range(10):
-            if dp[i][j][k]==-1:
-                continue
             #추가 안함
             dp[i+1][j][k]=max(dp[i+1][j][k], dp[i][j][k])
             
