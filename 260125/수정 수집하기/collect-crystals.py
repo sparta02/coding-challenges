@@ -1,5 +1,4 @@
 n, k = map(int, input().split())
-k=k-1
 str = input()
 
 # dp[i][j][k]
@@ -10,10 +9,10 @@ str = input()
 dp=[ [[-999]*(2) for _ in range(k+1)] for j in range(n) ]
 if str[0]=="L":
     dp[0][0][0]=1
-    dp[0][0][1]=0
+    dp[0][1][1]=1
 else:
     dp[0][0][1]=1
-    dp[0][0][0]=0
+    dp[0][1][0]=1
 
 def print_dp():
     for i in range(n):
