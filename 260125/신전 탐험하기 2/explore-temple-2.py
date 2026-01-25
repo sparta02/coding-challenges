@@ -22,7 +22,7 @@ dp[0][0][0]=l[0]
 dp[0][1][1]=m[0]
 dp[0][2][2]=r[0]
 
-for i in range(1, n):
+for i in range(1, n-1):
     for p in range(3):
         for j in range(3):
 
@@ -35,14 +35,22 @@ for i in range(1, n):
                     # print(p2, j2)
                     dp[i][p][j]=max(dp[i][p][j], dp[i-1][p2][j2]+cost[i][j])
 
-# for i in range(n-1, n):
-#     for j in range(3):
-#         for k in range(3):
-#             if j==k or :
-#                 continue
-#             dp[i][j]=max(dp[i][j], dp[i-1][k]+cost[i][j])
+for i in range(n-1, n):
+    for p in range(3):
+        for j in range(3):
+            #print(f"===p:{p}, j:{j}===")
+            for p2 in range(3):
+                for j2 in range(3):
+                    if j==j2:
+                        continue
+                    if j==p2:
+                        continue
+                    #print(f"p2:{p2}, j2:{j2}")
+                    dp[i][p][j]=max(dp[i][p][j], dp[i-1][p2][j2]+cost[i][j])
 
-# for i in range(n):
+
+
+# for i in range(1, n):
 #     print(f"{i+1}번째 층")
 #     for p in range(3):
 #         for j in range(3):
