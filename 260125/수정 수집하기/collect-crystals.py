@@ -16,7 +16,7 @@ else:
 
 def print_dp():
     for i in range(n):
-        print(f"{i}번째 수정")
+        print(f"{i+1}번째 수정")
         for j in range(k+1):
             for p in range(2):
                 print(f"{j}번 이동하고 현재 {p}: " , end=" ")
