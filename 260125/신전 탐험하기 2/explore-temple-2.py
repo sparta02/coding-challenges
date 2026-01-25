@@ -57,6 +57,5 @@ for i in range(n):
     for p in range(3):
         for j in range(3):
             result=max(result, dp[i][p][j])
-        print()
-    print()
-print()
+
+print(result)
