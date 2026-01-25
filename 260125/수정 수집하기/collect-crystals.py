@@ -12,7 +12,7 @@ if str[0]=="L":
     dp[0][1][1]=0
 else:
     dp[0][0][0]=0
-    dp[0][1][0]=1
+    dp[0][1][1]=1
 
 def print_dp():
     for i in range(n):
