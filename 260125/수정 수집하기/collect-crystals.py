@@ -1,4 +1,5 @@
 n, k = map(int, input().split())
+k=k-1
 str = input()
 
 # dp[i][j][k]
