@@ -8,7 +8,7 @@ M=len(B)
 # 문자열 B의 j번째까지 고려했을 때
 # 최소 편집거리
 
-dp= [[999999]*M for _ in range(A)]
+dp= [[999999]*M for _ in range(N)]
 
 def print_dp():
     print(" ", end=" ")
