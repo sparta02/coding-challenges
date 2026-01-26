@@ -44,18 +44,27 @@ def print_dp():
 
 # 3. 역추적 (실제 문자열 찾기)
 result = []
-i, j = N, M
+i, j = N - 1, M - 1  # 인덱스는 N-1, M-1부터 시작
+
 while i >= 0 and j >= 0:
-    if A[i-1] == B[j-1]:
-        result.append(A[i-1])
+    if A[i] == B[j]:
+        # 문자가 같으면 결과에 추가하고 대각선 위로 이동
+        result.append(A[i])
         i -= 1
         j -= 1
     else:
-        # 더 큰 값을 가진 쪽으로 이동
-        if dp[i-1][j] >= dp[i][j-1]:
+        # 문자가 다를 때
+        if i > 0 and j > 0:
+            # 왼쪽과 위쪽 중 큰 값으로 이동
+            if dp[i-1][j] >= dp[i][j-1]:
+                i -= 1
+            else:
+                j -= 1
+        elif i > 0: # j가 0이면 위로만 갈 수 있음
             i -= 1
-        else:
+        elif j > 0: # i가 0이면 왼쪽으로만 갈 수 있음
             j -= 1
-# print(result)
+        else: # i, j 모두 0이면 더 이상 갈 곳이 없음
+            break
 
 print("".join(reversed(result)))
