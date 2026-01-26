@@ -7,7 +7,7 @@ M=len(B)
 # dp[i][j]
 # A는 i번째
 # B는 j번째까지 고려
-dp= [ [9]*M for _ in range(N)]
+dp= [ [99999999999]*M for _ in range(N)]
 
 
 dp[0][0]=1 if A[0]==B[0] else 2
