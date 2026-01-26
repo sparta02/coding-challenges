@@ -45,7 +45,7 @@ def print_dp():
 # 3. 역추적 (실제 문자열 찾기)
 result = []
 i, j = N, M
-while i > 0 and j > 0:
+while i >= 0 and j >= 0:
     if A[i-1] == B[j-1]:
         result.append(A[i-1])
         i -= 1
