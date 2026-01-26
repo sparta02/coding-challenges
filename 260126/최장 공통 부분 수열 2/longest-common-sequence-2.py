@@ -57,3 +57,5 @@ while i > 0 and j > 0:
         else:
             j -= 1
 print(result)
+
+print("".join(reverse(result)))
