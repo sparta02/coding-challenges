@@ -25,7 +25,7 @@ def print_dp():
 if A[0]==B[0]:
     dp[0][0]=0
 else:
-    dp[0][0]=1
+    dp[0][0]=2
 
 for i in range(1, M):
     if A[0]==B[i]:
