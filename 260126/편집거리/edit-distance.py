@@ -53,5 +53,5 @@ for i in range(1,N):
             dp[i][j] = min(dp[i][j], dp[i-1][j-1]+1)
 
 
-print_dp()
+# print_dp()
 print(dp[-1][-1])
