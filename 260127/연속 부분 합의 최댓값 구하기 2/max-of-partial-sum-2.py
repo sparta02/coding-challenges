@@ -10,6 +10,9 @@ temp=-99999999
 for i in range(n):
     if temp==-99999999:
         temp=arr[i]
+        result=max(result,temp)
+        if temp<0:
+            temp=-99999999
     else:
         temp+=arr[i]
         result=max(result,temp)
