@@ -12,4 +12,4 @@ for point in points:
     else:
         maps[x]=y
 
-print(sum([x for x in points.values()]))
+print(sum([x for x in maps.values()]))
