@@ -2,14 +2,17 @@ n, k = map(int, input().split())
 arr = list(map(int, input().split()))
 
 # Please write your code here.
-maps={}
+count_list=[0]*100001
 
 for i in range(n):
-    maps[arr[i]]=maps.get(arr[i],0)+1
+    count_list[arr[i]]+=1
 
-count_list=list(maps.items())
+new_list=[]
+for i in range(100001):
+    if count_list[i]!=0:
+        new_list.append((i, count_list[i]))
 
-count_list=sorted(count_list, key=lambda x: (-x[1],-x[0]))
+new_list=sorted(new_list, key=lambda x: (-x[1],-x[0]))
 
 for i in range(k):
-    print(count_list[i][0], end=" ")
+    print(new_list[i][0], end=" ")
