@@ -21,7 +21,7 @@ for b in B:
 maps_C={}
 
 for c in C:
-    maps_C[c]=maps_C.get(a, 0)+1
+    maps_C[c]=maps_C.get(c, 0)+1
 
 maps_C_D={}
 for d in D:
