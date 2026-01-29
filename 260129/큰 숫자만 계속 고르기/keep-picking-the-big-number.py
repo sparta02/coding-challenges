@@ -8,7 +8,7 @@ pq=[]
 
 for item in arr:
     heapq.heappush(pq, -item)
-for _ in range(m)
+for _ in range(m):
     temp=heapq.heappop(pq)+1
     heapq.heappush(pq, temp)
 print(heapq.heappop(pq)*-1)
