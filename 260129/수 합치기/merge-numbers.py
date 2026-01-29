@@ -5,10 +5,12 @@ arr = list(map(int, input().split()))
 result=0
 
 while (len(arr)>1):
-    arr.sort()
-    temp_num=arr[0]+arr[1]
-    arr.pop(0)
-    arr.pop(0)
+    num1=min(arr)
+    arr.remove(num1)
+    num2=min(arr)
+    arr.remove(num2)
+    temp_num=num1+num2
+    
     arr.append(temp_num)
     result+=temp_num
     #print(arr)
