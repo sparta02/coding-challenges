@@ -18,7 +18,10 @@ for _ in range(t):
             heapq.heappush(pq_up, arr[i])
 
         # 홀수 번째
-        if i%2==1:
+        if i%2==0:
+            # print(pq_down)
+            # print(pq_up)
+            
             if len(pq_down)==len(pq_up):
                 print(mid_num, end=" ")
             elif len(pq_down)>len(pq_up):
