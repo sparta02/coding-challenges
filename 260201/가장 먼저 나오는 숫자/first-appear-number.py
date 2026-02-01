@@ -21,7 +21,10 @@ def lower(num):
 
 for num in query:
     lower_bound=lower(num)
-    if arr[lower_bound]==num:
+    print(lower_bound)
+    if lower_bound==n:
+        print(-1)
+    elif arr[lower_bound]==num:
         print(lower_bound+1)
     else:
         print(-1)
