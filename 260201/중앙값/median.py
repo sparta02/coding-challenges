@@ -1,50 +1,50 @@
 import heapq
-import sys
+t = int(input())
+for _ in range(t):
+    m = int(input())
+    arr = list(map(int, input().split()))
+    # 중앙값보다 작은 숫자들
+    pq_down=[]
+    # 중앙값보다 큰 숫자들
+    pq_up=[]
 
-def solve():
-    # 모든 입력을 한꺼번에 읽어서 공백 단위로 나눔
-    input_data = sys.stdin.read().split()
-    if not input_data:
-        return
+    mid_num=arr[0]
+    print(mid_num, end=" ")
     
-    idx = 0
-    t = int(input_data[idx])
-    idx += 1
-    
-    for _ in range(t):
-        m = int(input_data[idx])
-        idx += 1
-        
-        # m개의 숫자를 가져옴
-        arr = input_data[idx : idx + m]
-        idx += m
-        
-        max_heap = [] # 중앙값 이하 (최대 힙)
-        min_heap = [] # 중앙값 초과 (최소 힙)
-        result = []
-        
-        for i in range(m):
-            num = int(arr[i])
+    for i in range(1, m):
+        if arr[i]<mid_num:
+            heapq.heappush(pq_down, -arr[i])
+        else:
+            heapq.heappush(pq_up, arr[i])
+
+        # 홀수 번째
+        if i%2==0:
+            # print(pq_down)
+            # print(pq_up)
             
-            # 1. 두 힙의 균형을 맞추며 삽입
-            if len(max_heap) == len(min_heap):
-                heapq.heappush(max_heap, -num)
+            if len(pq_down)==len(pq_up):
+                print(mid_num, end=" ")
             else:
-                heapq.heappush(min_heap, num)
-            
-            # 2. 왼쪽 최대값이 오른쪽 최소값보다 크면 교체
-            if max_heap and min_heap and (-max_heap[0] > min_heap[0]):
-                left_max = -heapq.heappop(max_heap)
-                right_min = heapq.heappop(min_heap)
-                heapq.heappush(max_heap, -right_min)
-                heapq.heappush(min_heap, left_max)
-            
-            # 3. 홀수 번째 원소(i=0, 2, 4...)일 때 중앙값 저장
-            if i % 2 == 0:
-                result.append(str(-max_heap[0]))
-        
-        # 한 줄에 모든 결과 출력
-        print(" ".join(result))
+                while(len(pq_down)!=len(pq_up)):
+                    if len(pq_down)>len(pq_up):
+                        temp_num=-heapq.heappop(pq_down)
+                        heapq.heappush(pq_up, mid_num)
+                        mid_num=temp_num
+                        
+                    elif len(pq_down)<len(pq_up):
+                        temp_num=heapq.heappop(pq_up)
+                        heapq.heappush(pq_down, mid_num)
+                        mid_num=temp_num
+                
+                print(mid_num, end=" ")
+    print()
 
-if __name__ == "__main__":
-    solve()
+
+    
+# 처음에 1을 중앙값으로 잡고
+# 큰 pq, 작은 pq 만들어서
+# [ ], 1,[2, 3]
+# 길이가 다르니
+# 1. 큰 곳에서 pop
+# [ ], 1, 2, [3]
+# 2. 기존 중앙값 작은 곳에 넣기 [1], 2, [3]
