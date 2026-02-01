@@ -28,12 +28,12 @@ for _ in range(t):
                 while(len(pq_down)!=len(pq_up)):
                     if len(pq_down)>len(pq_up):
                         temp_num=-heapq.heappop(pq_down)
-                        heapq.heappush(pq_up, -mid_num)
+                        heapq.heappush(pq_up, mid_num)
                         mid_num=temp_num
                         
                     elif len(pq_down)<len(pq_up):
                         temp_num=heapq.heappop(pq_up)
-                        heapq.heappush(pq_down, mid_num)
+                        heapq.heappush(pq_down, -mid_num)
                         mid_num=temp_num
                 
                 print(mid_num, end=" ")
