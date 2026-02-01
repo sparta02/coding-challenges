@@ -1,5 +1,6 @@
 n, m = map(int, input().split())
 arr = list(map(int, input().split()))
+arr.sort()
 segments = [tuple(map(int, input().split())) for _ in range(m)]
 
 # Please write your code here.
