@@ -11,8 +11,8 @@ for i in range(n):
         temp_sum+=arr[j]
         j+=1
 
-    print(temp_sum)
-    print(i, j)
+    # print(temp_sum)
+    # print(i, j)
     
     if temp_sum>=s:
         result=min(result, j-i)
