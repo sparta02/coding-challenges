@@ -24,10 +24,10 @@ def find_num(num):
 for i in range(n):
     if arr[i]>=k:
         break
-    # k-arr[i] 이하인 수들 중 가장 오른쪽에 있는 수
+    #k-arr[i] 이하인 수들 중 가장 오른쪽에 있는 수
     j=find_num(k-arr[i])
     #print(j)
-    if j!=0:
+    if j!=0 and i<j:
         result+=(j-i)
 
 print(result)
