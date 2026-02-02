@@ -12,16 +12,16 @@ for i in range(n):
 
 
 # Please write your code here.
-i, j = 1, 2*k+1
+i, j = 0, 2*k
 result=0
 temp_sum=0
-for k in range(1, 2*k+2):
+for k in range(0, 2*k+1):
     if k in maps:
         temp_sum+=maps[k]
 
 result=max(result, temp_sum)
 
-for _ in range(1, 1000100):
+for _ in range(1000100):
     j+=1
     if j in maps:
         temp_sum+=maps[j]
