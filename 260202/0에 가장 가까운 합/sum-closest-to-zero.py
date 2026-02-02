@@ -9,7 +9,7 @@ j=n-1
 result=abs(arr[i]+arr[j])
 
 for i in range(n):
-    while (j-1>i and arr[i]+arr[j]>0):
+    while (j-1>i and arr[i]+arr[j]>=0):
         j-=1
     
     if 0<=j<n:
