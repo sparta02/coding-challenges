@@ -9,7 +9,7 @@ for _ in range(n):
 maps={}
 for i in range(n):
     maps[pos[i]]=maps.get(pos[i], 0)+candy[i]
-#print(maps)
+
 
 # Please write your code here.
 i, j = 1, 2*k+1
@@ -21,7 +21,7 @@ for k in range(1, 2*k+2):
 
 result=max(result, temp_sum)
 
-for i in range(1, 1000100):
+for _ in range(1, 1000100):
     j+=1
     if j in maps:
         temp_sum+=maps[j]
