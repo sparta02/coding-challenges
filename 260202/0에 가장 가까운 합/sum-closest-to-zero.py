@@ -19,7 +19,7 @@ for i in range(n):
         result=min(result, abs(arr[i]+arr[j+1]))
     if i>=j:
         break
-if arr[-1]<0:
+if arr[-1]<=0:
     result=abs(arr[-1]+arr[-2])
 print(result)
       
