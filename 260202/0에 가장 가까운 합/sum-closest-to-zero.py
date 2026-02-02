@@ -6,7 +6,7 @@ arr.sort()
 
 i=0
 j=n-1
-result=arr[i]+arr[j]
+result=abs(arr[i]+arr[j])
 
 for i in range(n):
     while (j-1>i and arr[i]+arr[j]>0):
