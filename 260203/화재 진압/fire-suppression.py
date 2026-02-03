@@ -43,9 +43,9 @@ for i in range(n):
     # print(fires[i])
     # print(left, right)
 
-    if left != -1:
-        result=max(result, abs(stations[left]-fires[i]))
-    if right !=9999999:
-        result=max(result, abs(stations[right]-fires[i]))
+    일단임시=min(abs(stations[left]-fires[i]) if left != -1 else 99999999, abs(stations[right]-fires[i]) if right !=9999999 else 99999999)
+    
+    result=max(result, 일단임시)
+
 
 print(result)
