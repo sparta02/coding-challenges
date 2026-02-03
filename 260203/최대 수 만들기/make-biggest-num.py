@@ -15,5 +15,5 @@ def compare(x, y):
 
 # Please write your code here.
 arr.sort(key=cmp_to_key(compare))
-
+arr=[str(x) for x in arr]
 print("".join(arr))
