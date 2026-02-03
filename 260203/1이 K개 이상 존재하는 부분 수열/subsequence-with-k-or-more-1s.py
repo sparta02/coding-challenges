@@ -13,7 +13,7 @@ for i in range(n):
 
 result=9999999
 
-if len(one_list)>k:
+if len(one_list)>=k:
     for i in range(len(one_list)-(k-1)):
         result=min(result, one_list[i+k-1]-one_list[i]+1)
 else:
