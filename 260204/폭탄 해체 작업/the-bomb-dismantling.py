@@ -5,7 +5,7 @@ bombs = [tuple(map(int, input().split())) for _ in range(n)]
 # n초에서 1초까지 내려가면서
 # 현재 초~n초 중 가장 값이 큰 폭탄을 해체
 result=0
-for i in range(n-1, 0, -1):
+for i in range(n, 0, -1):
     #print(f"{i}번째 시간")
     biggest_bomb=-1
     index=-1
