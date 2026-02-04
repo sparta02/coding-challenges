@@ -30,19 +30,30 @@ while life:
         result=max(left+right, result)
         life-=right_count
         left_count-=right_count
+        if life<1:
+            break
         right=-heapq.heappop(max_heap)
+        right_count=maps[right]
     # 큰 수가 더 많은 경우
     elif left_count<right_count:
         result=max(left+right, result)
         life-=left_count
         right_count-=left_count
+        if life<1:
+            break
         left=heapq.heappop(min_heap)
+        left_count=maps[left]
     # 똑같은 경우
     else:
         result=max(left+right, result)
         life-=left_count
+        if life<1:
+            break
         left=heapq.heappop(min_heap)
         right=-heapq.heappop(max_heap)
+
+        left_count=maps[left]
+        right_count=maps[right]
     # print(f"left: {left}, {left_count}개")
     # print(f"right: {right}, {right_count}개")
 
