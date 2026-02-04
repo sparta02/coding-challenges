@@ -14,7 +14,7 @@ result=0
 
 for i in range(N):
     B_card = B[i]
-    print(f"B 카드: {B_card}")
+    #print(f"B 카드: {B_card}")
 
     # Case 2. A가 이길 수 없는 경우
     if max(A)<B_card:
