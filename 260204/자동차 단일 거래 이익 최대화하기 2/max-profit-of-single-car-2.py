@@ -12,7 +12,8 @@ for i in range(n-1):
     #print(i, j)
     while j+1<n and price[i]<=price[j+1]:
         j+=1
+        result=max(result, price[j]-price[i])
     #print(i, j, j-i)
-    result=max(result, price[j]-price[i])
+    #result=max(result, price[j]-price[i])
 
 print(result)
