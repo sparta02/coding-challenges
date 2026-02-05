@@ -21,6 +21,8 @@ for i in range(N):
     elif compare[i]==0 and temp!=0:
         compare2.append(temp)
         temp=0
+if temp!=0:
+    compare2.append(temp)
 
 # print(compare)
 # print(compare2)
