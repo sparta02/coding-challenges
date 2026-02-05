@@ -5,7 +5,7 @@ arr = list(map(int, input().split()))
 
 def change(num):
     for i in range(num-1, num+2):
-        if 0<=num<n:
+        if 0<=i<n:
             if arr[i]==0:
                 arr[i]=1
             else:
@@ -17,5 +17,7 @@ for i in range(n-1):
         change(i+1)
         result+=1
     #print(arr)
-
-print(result)
+if 0 in arr:
+    print(-1)
+else:
+    print(result)
