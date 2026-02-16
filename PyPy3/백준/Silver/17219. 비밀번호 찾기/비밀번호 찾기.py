@@ -1,3 +1,5 @@
+import sys
+input=sys.stdin.readline
 n, m = map(int, input().split())
 
 maps={}
@@ -7,5 +9,5 @@ for _ in range(n):
     maps[a]=b
 
 for _ in range(m):
-    temp=input()
+    temp=input().strip()
     print(maps[temp])
