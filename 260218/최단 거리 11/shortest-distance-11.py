@@ -52,6 +52,7 @@ while pq:
             dist[next_node] = weight
             heapq.heappush(pq, (weight, next_node))
 
+print(dist[A])
 # ---------------------------------
 # 사전순으로 가장 앞선 최단경로 출력
 # ---------------------------------
