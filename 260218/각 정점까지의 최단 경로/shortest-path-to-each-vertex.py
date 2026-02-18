@@ -6,8 +6,9 @@ edges = [[] for _ in range(n+1)]
 for _ in range(m):
     s, e, d = map(int, input().split())
     edges[s].append((e, d))
+    edges[e].append((s, d))
     
-print(edges)    
+# print(edges)    
 
 # 거리를 저장할 배열
 INF = 10**6
@@ -33,9 +34,9 @@ while pq:
         # 현재 노드를 경유해서 가는 게 더 짧다면
         if dist[next_node]>next_w:
             dist[next_node]=next_w
-            heapq.heappop(pq, (next_w, next_node))
+            heapq.heappush(pq, (next_w, next_node))
 
-print(dist)
+# print(dist)
 
 for num in dist[1:]:
     if num==INF:
