@@ -1,6 +1,6 @@
 import heapq
 n, m = map(int, input().split())
-edges=[[] for _ in range(m)]
+edges=[[] for _ in range(n+1)]
 
 for _ in range(m):
     s, e, d = map(int, input().split())
