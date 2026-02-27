@@ -13,6 +13,7 @@ for _ in range(m):
 # Please write your code here.
 
 uf=[ i for i in range(n+1)]
+size=[1]*(n+1)
 
 def find(x):
     if uf[x]==x:
@@ -24,13 +25,19 @@ def find(x):
 def union(a, b):
     A=find(a)
     B=find(b)
-    uf[A]=B
+    
+    if A!=B:
+        uf[A]=B
+        total_size=size[A]+size[B]
+        size[A], size[B]=total_size,total_size
 
+maps={}
 for i in range(m):
     oper=operations[i]
     if oper[0]=='x':
         union(oper[1], oper[2])
     else:
         root=find(oper[1])
-        print(uf.count(root))
+        print(size[root])
 # print(uf)
+# print(size)
