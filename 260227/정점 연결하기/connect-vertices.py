@@ -13,13 +13,13 @@ def find(x):
 def union(a, b):
     A=find(a)
     B=find(b)
-    min_num, max_num=min(A,B), max(A,B)
-
-    parent[max_num]=min_num
-    if min_num not in roots:
-        roots.add(min_num)
-    if max_num in roots:
-        roots.remove(max_num)
+    if A!=B:
+        min_num, max_num=min(A,B), max(A,B)
+        parent[max_num]=min_num
+        if min_num not in roots:
+            roots.add(min_num)
+        if max_num in roots:
+            roots.remove(max_num)
 
 for a, b in edges:
     union(a, b)
