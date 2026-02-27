@@ -1,35 +1,28 @@
 n = int(input())
 edges = [tuple(map(int, input().split())) for _ in range(n - 2)]
 
-# Please write your code here.
-roots=set()
-parent= [ i for i in range(n+1)]
+parent = [i for i in range(n + 1)]
 
 def find(x):
-    if parent[x]!=x:
-        parent[x]=find(parent[x])
+    if parent[x] != x:
+        parent[x] = find(parent[x])
     return parent[x]
 
 def union(a, b):
-    A=find(a)
-    B=find(b)
-    if A!=B:
-        min_num, max_num=min(A,B), max(A,B)
-        parent[max_num]=min_num
-        if min_num not in roots:
-            roots.add(min_num)
-        if max_num in roots:
-            roots.remove(max_num)
+    a = find(a)
+    b = find(b)
+    if a != b:
+        parent[b] = a
 
+# 간선 연결
 for a, b in edges:
     union(a, b)
 
-# result=set()
-# i=1
-# while(len(result)<2):
-#     result.add(find(1))
-#     i+=1
-# result=list(result).sort()
-roots=list(roots)
-roots.sort()
-print(*roots)
+# 각 정점의 루트 수집
+roots = set()
+for i in range(1, n + 1):
+    roots.add(find(i))
+
+# 연결 요소는 정확히 2개
+r1, r2 = min(roots), max(roots)
+print(r1, r2)
