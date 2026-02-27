@@ -1,22 +1,24 @@
 n = int(input())
 edges = [tuple(map(int, input().split())) for _ in range(n - 2)]
 
-parent = [i for i in range(n + 1)]
+# Please write your code here.
+parent= [ i for i in range(n+1)]
 
 def find(x):
-    if parent[x] != x:
-        parent[x] = find(parent[x])
+    if parent[x]!=x:
+        parent[x]=find(parent[x])
     return parent[x]
 
 def union(a, b):
-    a = find(a)
-    b = find(b)
-    if a != b:
-        parent[b] = a
+    A=find(a)
+    B=find(b)
+    if A!=B:
+        min_num, max_num=min(A,B), max(A,B)
+        parent[max_num]=min_num
 
-# 간선 연결
 for a, b in edges:
     union(a, b)
+
 
 # 각 정점의 루트 수집
 roots = set()
