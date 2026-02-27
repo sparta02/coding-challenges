@@ -19,7 +19,7 @@ def union(a, b):
     if min_num not in roots:
         roots.add(min_num)
     if max_num in roots:
-        roots.pop(max_num)
+        roots.remove(max_num)
 
 for a, b in edges:
     union(a, b)
