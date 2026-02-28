@@ -22,4 +22,18 @@ count_set=set()
 # print(parent)
 for i in range(1, n+1):
     count_set.add(find(i))
-print(len(count_set)-1)
+
+# n=4
+# m=3
+# len(set)=1
+
+# n=4
+# m=2
+# len(set)=2
+
+# n=4
+# m=3
+# len(set)=2
+
+필요없는_간선_수=m+len(count_set)-n
+print(필요없는_간선_수+len(count_set)-1)
