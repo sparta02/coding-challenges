@@ -22,4 +22,4 @@ while queue:
         indegree[next]-=1
 
         if indegree[next]==0:
-            queue.append(ne)
+            queue.append(next)
