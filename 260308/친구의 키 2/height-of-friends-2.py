@@ -18,10 +18,10 @@ for i in range(1, n+1):
 cnt=0
 while queue:
     curr=queue.popleft()
-
+    cnt+=1
     for next in edges[curr]:
         indegree[next]-=1
-        cnt+=1
+        
         
         if indegree[next]==0:
             queue.append(next)
