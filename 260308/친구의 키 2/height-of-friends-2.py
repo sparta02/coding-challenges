@@ -28,5 +28,5 @@ while queue:
 if cnt==n:
     print('Consistent')
 else:
-    print('Ionsistent')
+    print('Inconsistent')
 
