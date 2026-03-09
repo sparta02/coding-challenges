@@ -1,7 +1,10 @@
 from collections import deque
+import heapq
 n = int(input())
 nodes = {}
 temp_nodes=input().split()
+temp_nodes.sort()
+
 for i in range(n):
     nodes[i]=temp_nodes[i]
     nodes[temp_nodes[i]]=i
@@ -18,23 +21,24 @@ for _ in range(m):
 queue=deque()
 
 
-for i in range(n):
-    if indegree[i]==0:
-        queue.append(i)
+for item in temp_nodes:
+    if indegree[nodes[item]]==0:
+        queue.append(item)
         
 print(len(queue))
-for num in queue:
-    print(nodes[num], end=" ")
+for item in queue:
+    print(item, end=" ")
 print()
 
-for i in range(n):
+for alpha in temp_nodes:
+    i=nodes[alpha]
     son_son_list={}
     visited=[0]*n
     queue=deque()
-    queue2=deque()
+    pq=[]
     for item in edges[i]:
         queue.append(item)
-        queue2.append(item)
+        heapq.heappush(pq, item)
     
     
     while queue:
@@ -46,8 +50,9 @@ for i in range(n):
             queue.append(next)
 
     print(nodes[i], end=" ")
-    print(len(queue2)-len(son_son_list), end=" ")
-    for item in queue2:
+    print(len(pq)-len(son_son_list), end=" ")
+    while pq:
+        item = heapq.heappop(pq)
         if item not in son_son_list:
             print(nodes[item], end=" ")
 
