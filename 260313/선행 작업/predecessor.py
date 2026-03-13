@@ -31,7 +31,7 @@ while queue:
         dp[next]=max(dp[next], time[curr])
         # print(dp[1:])
         if indegree[next]==0:
-            print(f"{next} 추가완료")
+            # print(f"{next} 추가완료")
             time[next]=time[next]+dp[next]
             # print(time[1:])
             queue.append(next)
