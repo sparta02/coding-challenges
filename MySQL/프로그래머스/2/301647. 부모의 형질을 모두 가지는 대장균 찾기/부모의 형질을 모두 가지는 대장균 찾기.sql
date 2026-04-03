@@ -1,0 +1,12 @@
+-- 코드를 작성해주세요
+SELECT ID, GENOTYPE, (SELECT GENOTYPE
+                 FROM ECOLI_DATA E4
+                 WHERE ID=E1.PARENT_ID) AS PARENT_GENOTYPE
+FROM ECOLI_DATA E1
+WHERE GENOTYPE & (SELECT GENOTYPE
+                 FROM ECOLI_DATA E2
+                 WHERE ID=E1.PARENT_ID)=(SELECT GENOTYPE
+                 FROM ECOLI_DATA E3
+                 WHERE ID=E1.PARENT_ID)
+                 
+ORDER BY ID ASC
