@@ -18,9 +18,11 @@ def di(limit):
 
     while pq:
         d, curr = heapq.heappop(pq)
-
+        if dist[curr]<d:
+            continue
         for next_node, w in edges[curr]:
             next_w=d + (1 if w>limit else 0)
+            
             
             if dist[next_node]>next_w:
                 dist[next_node]=next_w
