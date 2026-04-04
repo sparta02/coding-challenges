@@ -31,10 +31,7 @@ while queue:
         indegree[next]-=1
         # print(next, indegree)
 
-        if indegree[next]<0:
-            print('Exists')
-            sys.exit
-        elif indegree[next]==0:
+        if indegree[next]==0:
             queue.append(next)
 if cnt==n:
     print('Not Exists')
