@@ -25,9 +25,9 @@ for i in range(1<<n):
         # 현재 위치 방문 불가하면 skip
         if dp[i][j]==INF:
             continue
-        # 비트 오류면 skip
-        if not(i&(1<<(j-1))):
-            continue
+        # # 비트 오류면 skip
+        # if not(i&(1<<(j-1))):
+        #     continue
         for k in range(1, n+1):
             # 이미 방문했으면 skip
             if i&(1<<(k-1)):
