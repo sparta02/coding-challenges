@@ -7,7 +7,7 @@ for _ in range(n):
 # 비트가 1인 곳들을 모두 방문하고
 # 현재 위치가 n일 때 최소거리
 
-INF=999999999999999
+INF=99
 dp = [[INF]*(n+1) for _ in range(1<<n)]
 
 def print_dp():
@@ -42,6 +42,9 @@ for i in range(1<<n):
             dp[next][k]=min(dp[next][k], dp[i][j]+dist[j][k])
             
 for i in range(1, n+1):
+    if dist[i][1]==0:
+        dp[-1][i]=INF
     dp[-1][i]+=dist[i][1]
 
+# print_dp()
 print(min(dp[-1]))
