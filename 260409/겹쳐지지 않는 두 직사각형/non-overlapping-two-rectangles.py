@@ -17,7 +17,7 @@ def calc_sum(x1, y1, x2, y2):
     return prefix_sum[x2+1][y2+1]-prefix_sum[x2+1][y1]-prefix_sum[x1][y2+1]+prefix_sum[x1][y1]
 
 
-result=0
+result=-9999999999999999999999999
 for x1 in range(n):
     for x2 in range(x1, n):
         for y1 in range(m):
@@ -28,11 +28,19 @@ for x1 in range(n):
                             for y4 in range(y3, m):
                                 # (x1~x2), (y1~y2)
                                 # (x3~x4), (y3~y4)
-                                if (x1<=x3<=x2 and y1<=y3<=y2) or (x1<=x4<=x2 and y1<=y4<=y2):
+                                flag=0
+                                for i in range(x3, x4+1):
+                                    for j in range(y3, y4+1):
+                                        if (x1<=i<=x2) and (y1<=j<=y2):
+                                            flag=1
+                                            break
+                                if flag:
                                     continue
                                 # print(x1,y1,x2,y2)
                                 # print(x3,y3,x4,y4)
+                                # print(calc_sum(x1,y1,x2,y2)+calc_sum(x3,y3,x4,y4))
                                 # print()
+                                
                                 result=max(result, calc_sum(x1,y1,x2,y2)+calc_sum(x3,y3,x4,y4))
 
 print(result)
