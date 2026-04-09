@@ -4,14 +4,12 @@ grid = [list(map(int, input().split())) for _ in range(n)]
 points = [tuple(map(int, input().split())) for _ in range(k)]
 
 # Please write your code here.
-total_visited=[[0]*(n) for _ in range(n)]
+visited=[[0]*(n) for _ in range(n)]
 
 def bfs(x, y):
     queue=deque()
     queue.append((x,y))
-    visited=[[0]*(n) for _ in range(n)]
     visited[x][y]=1
-    total_visited[x][y]=1
 
     while queue:
         curr_x, curr_y=queue.popleft()
@@ -22,7 +20,6 @@ def bfs(x, y):
             next_y=curr_y+dy[i]
             if 0<=next_x<n and 0<=next_y<n and visited[next_x][next_y]==0 and grid[next_x][next_y]==0:
                 visited[next_x][next_y]=1
-                total_visited[next_x][next_y]=1
                 queue.append((next_x, next_y))
 
 
@@ -31,6 +28,6 @@ for x, y in points:
 
 result=0
 for i in range(n):
-    result+=sum(total_visited[i])
+    result+=sum(visited[i])
 
 print(result)
