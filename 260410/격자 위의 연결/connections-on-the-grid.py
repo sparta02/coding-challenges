@@ -12,13 +12,12 @@ pq=[]
 for i in range(n):
     for j in range(m-1):
         # print(i*m+j, i*m+j+1)
-        heapq.heappush(pq, (horizontal[i][j], i*m+j, i*m+j+1))
+        pq.append((horizontal[i][j], i*m+j, i*m+j+1))
 
 for i in range(n-1):
     for j in range(m):
-
-        heapq.heappush(pq, (vertical[i][j], i*m+j, (i+1)*m+j))
-
+        pq.append((vertical[i][j], i*m+j, (i+1)*m+j))
+pq.sort()
 parent=[ i for i in range(n*m+1)]
 def find(x):
     if parent[x]!=x:
@@ -34,7 +33,7 @@ def union(a, b):
 result=0
 cnt=0
 while pq:
-    dist, s, e = heapq.heappop(pq)
+    dist, s, e = pq.pop()
     if find(s)!=find(e):
         union(s, e)
         result+=dist
