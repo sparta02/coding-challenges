@@ -11,11 +11,13 @@ vertical = [list(map(int, input().split())) for _ in range(n - 1)]
 pq=[]
 for i in range(n):
     for j in range(m-1):
+        # print(i*m+j, i*m+j+1)
         heapq.heappush(pq, (horizontal[i][j], i*m+j, i*m+j+1))
 
 for i in range(n-1):
     for j in range(m):
-        heapq.heappush(pq, (vertical[i][j], i*n+j, (i+1)*n+j))
+
+        heapq.heappush(pq, (vertical[i][j], i*m+j, (i+1)*m+j))
 
 parent=[ i for i in range(n*m+1)]
 def find(x):
