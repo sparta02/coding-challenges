@@ -1,4 +1,3 @@
-import heapq
 n, m = map(int, input().split())
 
 horizontal = [list(map(int, input().split())) for _ in range(n)]
@@ -17,7 +16,8 @@ for i in range(n):
 for i in range(n-1):
     for j in range(m):
         pq.append((vertical[i][j], i*m+j, (i+1)*m+j))
-pq.sort()
+pq.sort(reverse=True)
+# print(pq)
 parent=[ i for i in range(n*m+1)]
 def find(x):
     if parent[x]!=x:
