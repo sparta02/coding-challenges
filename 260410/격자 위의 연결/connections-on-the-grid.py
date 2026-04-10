@@ -30,10 +30,14 @@ def union(a, b):
     parent[A]=B
 
 result=0
+cnt=0
 while pq:
     dist, s, e = heapq.heappop(pq)
     if find(s)!=find(e):
         union(s, e)
         result+=dist
+        cnt+=1
+        if cnt==(n*m-1):
+            break
 
 print(result)
