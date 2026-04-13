@@ -4,7 +4,7 @@ arr = [int(input()) for _ in range(n)]
 
 
 left =0
-right=min(arr)
+right=100001
 max_idx=-1
 
 def check_num(num):
