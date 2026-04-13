@@ -9,8 +9,11 @@ max_idx=-1
 
 def check_num(num):
     temp=0
-    for i in arr:
-        temp+=i//num
+    if num!=0:
+        for i in arr:
+            temp+=i//num
+    else:
+        temp=10**9
     return temp
 
 while left<=right:
