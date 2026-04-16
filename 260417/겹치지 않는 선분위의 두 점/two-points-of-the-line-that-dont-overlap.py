@@ -1,6 +1,6 @@
 n, m = map(int, input().split())
 segments = [tuple(map(int, input().split())) for _ in range(m)]
-
+segments.sort()
 # Please write your code here.
 def calc_how_many(dist):
     cnt=0
